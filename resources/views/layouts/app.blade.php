@@ -16,6 +16,7 @@
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/apptop.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/top.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/islandtop.css') }}" rel="stylesheet">
 </head>
@@ -23,26 +24,24 @@
     <header>
         <div class="inner">
             <div class="logo">
-                <img src="logo" alt="ロゴ">
+                <img src="{{ asset('storahe/tokyoisland.jpg') }}" alt="ロゴ" class="item1">
             </div>
         </div>
         
-   <nav>
-       <div class="col-md-8 mx-right">
-           <div class="hamburger-menu">
+        <nav>
+            <div class="hamburger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
+                    <ul>
+                        <li><a href="#">伊豆諸島一覧</a></li>
+                        <li><a href="#">新規作成</a></li>
+                        <li><a href="#">マイページ</a></li>
+                        <li><a href="#">ログアウト</a></li>
+                    </ul>
             </div>
-            <ul>
-                <li><a href="#">伊豆諸島一覧</a></li>
-                <li><a href="#">新規作成</a></li>
-                <li><a href="#">マイページ</a></li>
-                <li><a href="#">ログアウト</a></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
     </header>
     <main class="py-4">
         @yield('content')

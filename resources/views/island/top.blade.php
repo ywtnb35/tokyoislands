@@ -4,6 +4,8 @@
 @section('title', '島個別ページ')
 
 @section('content')
+
+<div class="main">
     <section>
     <div class="container">
         <div class="section">
@@ -36,4 +38,5 @@
     <section>
         <img src="">
     </section>
+</div>
 @endsection
