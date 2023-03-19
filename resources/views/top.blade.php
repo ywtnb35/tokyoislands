@@ -4,7 +4,7 @@
 @section('title', '伊豆諸島一覧')
 
 @section('content')
-    <div class="container">
+    <div id="islands-list">
         <div class="islands-list">
             <div class="col-md-8 mx-auto">
                 <h2>伊豆諸島一覧</h2>

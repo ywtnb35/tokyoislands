@@ -24,24 +24,25 @@
     <header>
         <div class="inner">
             <div class="logo">
-                <img src="{{ asset('storahe/tokyoisland.jpg') }}" alt="ロゴ" class="item1">
+                <img src="{{ asset('storahe/tokyoisland.jpg') }}" alt="ロゴ">
             </div>
-        </div>
         
-        <nav>
-            <div class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                    <ul>
-                        <li><a href="#">伊豆諸島一覧</a></li>
-                        <li><a href="#">新規作成</a></li>
-                        <li><a href="#">マイページ</a></li>
-                        <li><a href="#">ログアウト</a></li>
-                    </ul>
-            </div>
-        </nav>
+            <nav>
+                <div class="hamburger-menu">
+                    <span class="nav_toggle">
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </span>
+                    <!--<ul>-->
+                    <!--    <li><a href="">伊豆諸島一覧</a></li>-->
+                    <!--    <li><a href="">新規作成</a></li>-->
+                    <!--    <li><a href="">マイページ</a></li>-->
+                    <!--    <li><a href="">ログアウト</a></li>-->
+                    <!--</ul>-->
+                </div>
+            </nav>
+        </div>
     </header>
     <main class="py-4">
         @yield('content')
