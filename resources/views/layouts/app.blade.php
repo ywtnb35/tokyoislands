@@ -19,6 +19,7 @@
     <link href="{{ secure_asset('css/apptop.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/top.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/islandtop.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/detail.css') }}" rel="stylesheet">
 </head>
 <body>
     <header>

@@ -1,18 +1,28 @@
+.main{
+  width:980px;
+  margin:0 auto;
+}
+
 .btn-top {
-  background: gray;
+  text-align:center;
   padding: 1em 1em;
-  border: black 2px solid;
   text-decoration: none;
   color: black;
   font-size: 1.5em;
   font-family: sans-serif;
 }
 
-.btn-genre-scenery .btn-genre-food .btn-genre-flora {
+img{
+  display:flex;
+}
+.btn{
+  padding-top: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.btn-genre-scenery{
-  color:red;
+.btn-genre-scenery .btn-genre-food .btn-genre-flora {
+  justify-content: center;
+  width:40px;
+  height:20px;
 }
