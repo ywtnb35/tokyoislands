@@ -10,31 +10,31 @@
             </div>
             <div class="photolist">
                 <div class="oshima">
-                    <img src=" {{ asset('') }}" alt="oshima">
+                    <img src="{{ asset('storage/大島.jpg') }}">
                 </div>
                 <div class="toshima">
-                    <img src=" {{ asset('') }}" alt="toshima">
+                    <img src=" {{ asset('storage/利島.jpg') }}" alt="toshima">
                 </div>
                 <div class="niijima">
-                    <img src=" {{ asset('') }}" alt="niijima">
+                    <img src="{{ asset('storage/新島.jpg') }}"alt="niijima">
                 </div>
                 <div class="shikinejima">
-                    <img src=" {{ asset('') }}" alt="shikinejima">
+                    <img src=" {{ asset('storege/式根島.jpg') }}" alt="shikinejima">
                 </div>
                 <div class="kouzushima">
-                    <img src=" {{ asset('') }}" alt="kouzushima">
+                    <img src=" {{ asset('storage/神津島.jpg') }}" alt="kouzushima">
                 </div>
                 <div class="miyakejima">
-                    <img src=" {{ asset('') }}" alt="miyakejima">
+                    <img src=" {{ asset('storage/三宅島.jpg') }}" alt="miyakejima">
                 </div>
                   <div class="mikurashima">
-                    <img src=" {{ asset('') }}" alt="mikurashima">
+                    <img src=" {{ asset('storage/御蔵島.jpg') }}" alt="mikurashima">
                 </div>
                 <div class="hachijojima">
-                    <img src=" {{ asset('') }}" alt="hachijyojima">
+                    <img src=" {{ asset('storage/八丈.jpg') }}" alt="hachijyojima">
                 </div>
                  <div class="aogashima">
-                    <img src=" {{ asset('') }}" alt="aogashima">
+                    <img src=" {{ asset('storage/青ヶ島.jpg') }}" alt="aogashima">
                 </div>
             </div>
         </div>

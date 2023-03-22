@@ -11,14 +11,15 @@
         </div>
     </section>
     <section>
-        <div class="box-islandname">島名
-        </div>
-        <div class="box-gnere">ジャンル
+        <div class="select">
+            <div class="islandname">島名</div>
+            <div class="gnere">ジャンル</div>
         </div>
     </section>
     
     <section>
         <div class="imgcontainer">
+            <img src="">
         </div>
     </section>
     
