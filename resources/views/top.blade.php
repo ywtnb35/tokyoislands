@@ -19,7 +19,7 @@
                     <img src="{{ asset('storage/新島.jpg') }}"alt="niijima">
                 </div>
                 <div class="shikinejima">
-                    <img src=" {{ asset('storege/式根島.jpg') }}" alt="shikinejima">
+                    <img src=" {{ asset('storage/式根島.jpg') }}" alt="shikinejima">
                 </div>
                 <div class="kouzushima">
                     <img src=" {{ asset('storage/神津島.jpg') }}" alt="kouzushima">

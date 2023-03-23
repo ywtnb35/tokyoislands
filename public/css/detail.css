@@ -4,17 +4,28 @@
 }
 
 .username {
+    width:450px;
+    height:10px;
     text-align:center;
     color:#DCDCDC;
+    margin:auto 250px;
 }
 
-.select {
-    border:1px solid #003059;
-    padding:5px;
-    border-radius:5px;
-    flex:1; 
+.select{
+  display: flex;
+  justify-content: center; 
+}
+
+.select .item{
+  box-sizing: border-box;
+  padding: 90px 80px;
 }
 
 .imgcontainer {
-    
+    border:1px solid #DCDCDC ;
+    margin: 100px 250px;
+}
+
+.text{
+    margin:150px 150px;
 }

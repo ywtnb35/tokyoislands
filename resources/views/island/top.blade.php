@@ -10,7 +10,7 @@
         <div class="container">
             <div class="section">
                 <div class="col-img">
-                    <img src="shima">大島
+                    <img src="{{ asset('storage/大島.jpg') }}">
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
         <section>
             <div class="btn-top">
                 <div class="col-md-8 mx-auto">
-                <input type="button" value="公式サイトはこちら">
+                <a href="http://www.izu-oshima.or.jp/">公式サイトはこちら</a>
             </div>
         </section>
     
