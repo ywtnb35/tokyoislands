@@ -13,13 +13,14 @@
 }
 
 img{
-  display:flex;
-  margin:auto 130px;
+  display:block;
+  max-width: 100%;
+  height: auto;
 }
-.btn{
-  padding-top: 50px;
-  display: flex;
-  justify-content: space-evenly;
+.button{
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .btn-genre-scenery .btn-genre-food .btn-genre-flora {

@@ -24,7 +24,7 @@
         </section>
     
         <section>
-            <div class="btn">
+            <div class="button">
                 <div class="btn-genre-scenery">
                     <input type="button" value="風景">
                 </div>

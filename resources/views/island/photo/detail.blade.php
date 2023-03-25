@@ -19,13 +19,13 @@
     
     <section>
         <div class="imgcontainer">
-            <img src="">投稿写真表示
+            <img src="">投稿写真表示<br>
         </div>
     </section>
     
     <section>
         <div class="text">
-            <textarea rows="10" cols="100">コメント</textarea>
+            <textarea rows="10" cols="80">コメント</textarea>
         </div>
     </section>
 </div>

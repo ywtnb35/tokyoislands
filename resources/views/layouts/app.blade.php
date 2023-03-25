@@ -20,12 +20,13 @@
     <link href="{{ secure_asset('css/top.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/islandtop.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/detail.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/mypage.css') }}" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="inner">
             <div class="logo">
-                <img src="{{ asset('') }}" alt="ロゴ">
+                <img src="{{ asset('storage/tokyoisland.jpg') }}" alt="ロゴ">
             </div>
         
             <nav>
@@ -45,6 +46,7 @@
             </nav>
         </div>
     </header>
+    
     <main class="py-4">
         @yield('content')
     </main>
