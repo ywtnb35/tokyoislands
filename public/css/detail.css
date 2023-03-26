@@ -3,6 +3,10 @@
     margin:0 auto;
 }
 
+section{
+    text-align:center;
+}
+
 .username {
     width:450px;
     height:10px;
@@ -11,20 +15,34 @@
     margin:auto 250px;
 }
 
-.select{
-  display: flex;
-  justify-content: center; 
+.select {
+    display:inline-block;
+    text-align:center;
+}
+.select ul{
+    display: flex;
+    margin:90px 260px;
 }
 
-.select .item{
-  box-sizing: border-box;
-  padding: 90px 80px;
+.select ul li{
+    text-decoration: none;
+    width:200px;
+    text-align:center;
+    border:1px solid #ddd;
 }
+
 
 .imgcontainer {
     border:1px solid #DCDCDC;
-    margin: 100px 250px;
+    width:640px;
+    height:426px;
+    margin: 100px 170px;
+}
+
+.imgdetail {
+    width:640px;
+    height:426px;
 }
 .text{
-    margin: 150px 150px;
+    text-align:center;
 }

@@ -1,31 +1,38 @@
-.main{
-  width:980px;
+.main {
+  width:1200px;
   margin:0 auto;
 }
 
-.btn-top {
+section {
   text-align:center;
-  padding: 1em 1em;
-  text-decoration: none;
-  color: black;
-  font-size: 1.5em;
-  font-family: sans-serif;
 }
 
-img{
-  display:block;
-  max-width: 100%;
-  height: auto;
-}
-.button{
-    padding-top: 50px;
-    display: flex;
-    justify-content: space-evenly;
+.col-img {
+  text-align:center;
 }
 
-.btn-genre-scenery .btn-genre-food .btn-genre-flora {
-  justify-content: center;
-  width:60px;
-  height:20px;
-  font-size:5em;
+.island-link {
+  text-align: center;
+} 
+
+.button {
+  display:inline-block;
+  margin:10px ;
+  border:10px;          /* 角丸       */
+  font-size: 16pt;  /* 文字サイズ */
+  text-align: center;      /* 文字位置   */
+  cursor: pointer;     /* カーソル   */
+  padding: 20px 20px;   /* 余白       */
+  background: #778899;     /* 背景色     */
+  color: #000000;     /* 文字色     */
+  line-height: 1em;
+}
+
+.genre-container {
+  display:inline-block;
+  text-align:center;
+  
+}
+.genre {
+  width:200px;
 }

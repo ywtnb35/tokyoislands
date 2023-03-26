@@ -1,10 +1,9 @@
 .page{
     width:980px;
-    margin:0 auto;;
+    margin:0 auto;
 }
 
 .text {
-    width:350px;
-    margin:80px 350px;
+    text-align:center;
 }
 

@@ -12,7 +12,7 @@
                 <div class="w-container">
                     <div class="island-container">
                         <div class="island">
-                            <a href="" class="island-link"><img src="{{ asset('storage/大島.jpg') }}"></a>
+                            <a href="" class="island-link"><img src="{{ asset('storage/大島.jpg') }}" alt="oshima"></a>
                         </div>
                         <div class="island">
                             <a href="" class="island-link"><img src=" {{ asset('storage/利島.jpg') }}" alt="toshima"></a>

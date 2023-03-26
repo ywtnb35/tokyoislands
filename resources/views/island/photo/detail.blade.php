@@ -12,14 +12,18 @@
     </section>
     <section>
         <div class="select">
-            <div class="item">島名</div>
-            <div class="item">ジャンル</div>
+            <ul>
+                <li>島名</li>
+                <li>ジャンル</li>
+            </ul>
         </div>
     </section>
     
     <section>
         <div class="imgcontainer">
-            <img src="">投稿写真表示<br>
+            <div class="imgdetail">
+                <img src="">投稿写真表示<br>
+            </div>
         </div>
     </section>
     

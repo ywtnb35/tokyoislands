@@ -23,29 +23,28 @@
     <link href="{{ secure_asset('css/mypage.css') }}" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="inner">
-            <div class="logo">
+    <div class="header w_inner">
+        <div class="logo">
                 <img src="{{ asset('storage/tokyoisland.jpg') }}" alt="ロゴ">
-            </div>
-        
+        </div>
+        <div class="navArea">
             <nav>
-                <div class="hamburger-menu">
-                    <span class="nav_toggle">
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                    </span>
-                    <!--<ul>-->
-                    <!--    <li><a href="">伊豆諸島一覧</a></li>-->
-                    <!--    <li><a href="">新規作成</a></li>-->
-                    <!--    <li><a href="">マイページ</a></li>-->
-                    <!--    <li><a href="">ログアウト</a></li>-->
-                    <!--</ul>-->
+                <div class="inner">
+                    <ul>
+                        <li><a href="">伊豆諸島一覧</a></li>
+                        <li><a href="">新規作成</a></li>
+                        <li><a href="">マイページ</a></li>
+                        <li><a href="">ログアウト</a></li>
+                    </ul>
                 </div>
             </nav>
+            <div class="toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </header>
+    </div>
     
     <main class="py-4">
         @yield('content')
