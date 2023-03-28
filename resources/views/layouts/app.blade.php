@@ -25,7 +25,7 @@
 <body>
     <div class="header w_inner">
         <div class="logo">
-                <img src="{{ asset('storage/tokyoisland.jpg') }}" alt="ロゴ">
+                <img src="{{ asset('') }}" alt="ロゴ">
         </div>
         <div class="navArea">
             <nav>

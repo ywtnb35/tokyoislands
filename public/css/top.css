@@ -9,6 +9,8 @@
 h2{
   text-align:center;
   border:1px solid #CCCCCC;
+  margin:50px;
+  display:block;
 }
 
 .island-container{
