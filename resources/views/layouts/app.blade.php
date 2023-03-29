@@ -25,7 +25,7 @@
 <body>
     <div class="header">
         <div class="logo">
-                <img src="{{ asset('') }}" alt="ロゴ">
+                <img src="{{ asset('storage/logo.png') }}" alt="ロゴ">
         </div>
         <div class="navArea">
             <nav>

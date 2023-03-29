@@ -17,8 +17,8 @@
     </div>
     
     
-    <div class="imgcontainer">
-            <div class="imgdetail">
+    <div class="img_container">
+            <div class="img_detail">
                 <img src="">投稿写真表示<br>
             </div>
         </div>

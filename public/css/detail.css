@@ -16,14 +16,13 @@
     text-align:center;
 }
 
-.imgcontainer {
+.img_container {
     border:1px solid #DCDCDC;
-    width:640px;
+    width:620px;
     height:426px;
-    margin: 100px 170px;
+    margin:100px 170px;
 }
 
-.imgdetail {
-    width:640px;
-    height:426px;
+.img_detail {
+    text-align:center;
 }

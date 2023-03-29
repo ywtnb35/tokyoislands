@@ -48,8 +48,7 @@
 }
 
 .genre_btn_l{
-  background-color: #b0c4de
-;
+  background-color: #b0c4de;
   float:left;
   width:360px;
   height:100px;
@@ -59,20 +58,16 @@
   margin-left:30px;
   border-radius:10px;
 }
-/*.genre_btn_r{*/
-/*  background-color: #a9a9a9;*/
-/*  float:left;*/
-/*  width:360px;*/
-/*  height:100px;*/
-/*  text-align:center;*/
-/*  line-height: 100px;*/
-/*  font-size: 20px;*/
-/*  margin-*/
-  
-/*}*/
 
 .float_clr{
   float:clear;
+}
+
+.island-detail{
+  margin-top:30px;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  gap: 27px;
 }
 
 @media (max-width: 468px){
