@@ -23,7 +23,7 @@
     <link href="{{ secure_asset('css/mypage.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="header w_inner">
+    <div class="header">
         <div class="logo">
                 <img src="{{ asset('') }}" alt="ロゴ">
         </div>

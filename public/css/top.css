@@ -22,6 +22,11 @@ h2{
 .island{
   display:flex;
   flex-direction: column;
+  background-color: #333;
+}
+
+.island img{
+  width:550px;
 }
 
 section{
@@ -31,7 +36,6 @@ section{
 .w-container{
   width: min(92%, 1166px);
   margin: auto;
-  position: relative;
 }
 
 .island-link{

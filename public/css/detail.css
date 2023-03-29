@@ -1,36 +1,20 @@
 #detail {
     width:980px;
     margin:0 auto;
-}
-
-section{
     text-align:center;
 }
+
 
 .username {
-    width:450px;
+    width:350px;
     height:10px;
-    text-align:center;
     color:#DCDCDC;
-    margin:auto 250px;
+    margin:30px auto;
 }
 
-.select {
-    display:inline-block;
+.data_container{
     text-align:center;
 }
-.select ul{
-    display: flex;
-    margin:90px 260px;
-}
-
-.select ul li{
-    text-decoration: none;
-    width:200px;
-    text-align:center;
-    border:1px solid #ddd;
-}
-
 
 .imgcontainer {
     border:1px solid #DCDCDC;
@@ -42,7 +26,4 @@ section{
 .imgdetail {
     width:640px;
     height:426px;
-}
-.text{
-    text-align:center;
 }

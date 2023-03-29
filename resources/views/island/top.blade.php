@@ -6,39 +6,37 @@
 @section('content')
 <body>
     <div class="main">
-        <section>
         <div class="container">
             <div class="col-img">
                 <img src="{{ asset('storage/大島.jpg') }}">
             </div>
         </div>
-        </section>
     
-        <section>
-            <div class="col-md-8 mx-auto">
-                <div class="island-link">
-                    <a href="http://www.izu-oshima.or.jp/" class="button">公式サイトはこちら</a>
-                </div>
-            </div>
-        </section>
+        <br>
+        <br>
     
-        <section>
-            <div class="genre-container">
-                <div class="genre">
-                    <input type="button" value="風景">
-                    <input type="button" value="食べ物">
-                    <input type="button" value="動植物">
-                </div>
+        <div class="col-md-8 mx-auto">
+            <div class="island_link">
+                <a href="http://www.izu-oshima.or.jp/" class="button">公式サイトはこちら</a>
+               </div>
+        </div>
+        
+        <br>
+        <br>
+        
+        <div class="genre_btn">
+            <div class="genre_btn_l">風 景</div>
+            <div class="genre_btn_l">食べ物</div>
+            <div class="genre_btn_l">動植物</div>
+        </div>
+        
+        <div class="float_clr"></div>
+        
+        <div class="photo-container"></div>
+            <div class="island-detail">
+                <img src="">
             </div>
-        </section>
-    
-        <section>
-            <div class="photo-container"></div>
-                <div class="island-detail">
-                    <img src="">
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
 </body>
 @endsection
