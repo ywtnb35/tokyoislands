@@ -8,6 +8,7 @@
     <div class="main">
         <div class="container">
             <div class="col-img">
+                <p>大島</p>
                 <img src="{{ asset('storage/大島.jpg') }}">
             </div>
         </div>

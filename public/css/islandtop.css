@@ -6,12 +6,22 @@
 .col-img {
   margin-top:5px;
   text-align:center;
+  position:relative;
+}
+
+.col-img p {
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color:#ffffff;
+  font-size:55px;
 }
 
 .island_link {
   margin-top:10px;
   text-align: center;
-} 
+}
 
 .button {
   display:inline-block;
