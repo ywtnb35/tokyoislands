@@ -13,39 +13,39 @@
                     <div class="island-container">
                         <div class="island">
                             <p>大島</p>
-                            <a href="" class="island-link"><img src="{{ asset('storage/大島.jpg') }}" alt="oshima"></a>
+                            <a href="island/top?id=1" class="island-link"><img src="{{ asset('storage/大島.jpg') }}" alt="oshima"></a>
                         </div>
                         <div class="island">
                             <p>利島</p>
-                            <a href= class="island-link"><img src=" {{ asset('storage/利島.jpg') }}" alt="toshima"></a>
+                            <a href="island/top?id=2" class="island-link"><img src=" {{ asset('storage/利島.jpg') }}" alt="toshima"></a>
                         </div>
                         <div class="island">
                             <p>新島</p>
-                            <a href="" class="island-link"><img src="{{ asset('storage/新島.jpg') }}"alt="niijima"></a>
+                            <a href="island/top?id=3" class="island-link"><img src="{{ asset('storage/新島.jpg') }}"alt="niijima"></a>
                         </div>
                         <div class="island">
                             <p>式根島</p>
-                            <a href="" class="island-link"><img src=" {{ asset('storage/式根島.jpg') }}" alt="shikinejima"></a>
+                            <a href="island/top?id=4" class="island-link"><img src=" {{ asset('storage/式根島.jpg') }}" alt="shikinejima"></a>
                         </div>
                         <div class="island">
                             <P>神津島</P>
-                            <a href="" class="island-link"><img src=" {{ asset('storage/神津島.jpg') }}" alt="kouzushima"></a>
+                            <a href="island/top?id=5" class="island-link"><img src=" {{ asset('storage/神津島.jpg') }}" alt="kouzushima"></a>
                         </div>
                         <div class="island">
                             <p>三宅島</p>
-                            <a href="" class="island-link"><img src=" {{ asset('storage/三宅島.jpg') }}" alt="miyakejima"></a>
+                            <a href="island/top?id=6" class="island-link"><img src=" {{ asset('storage/三宅島.jpg') }}" alt="miyakejima"></a>
                         </div>
                           <div class="island">
                               <P>御蔵島</P>
-                            <a href="" class="island-link"><img src=" {{ asset('storage/御蔵島.jpg') }}" alt="mikurashima"></a>
+                            <a href="island/top?id=7" class="island-link"><img src=" {{ asset('storage/御蔵島.jpg') }}" alt="mikurashima"></a>
                         </div>
                         <div class="island">
                             <P>八丈島</P>
-                            <a href="" class="island-link"><img src=" {{ asset('storage/八丈.jpg') }}" alt="hachijyojima"></a>
+                            <a href="island/top?id=8" class="island-link"><img src=" {{ asset('storage/八丈.jpg') }}" alt="hachijyojima"></a>
                         </div>
                          <div class="island">
                              <P>青ヶ島</P>
-                            <a href="" class="island-link"><img src=" {{ asset('storage/青ヶ島.jpg') }}" alt="aogashima"></a>
+                            <a href="island/top?id=9" class="island-link"><img src=" {{ asset('storage/青ヶ島.jpg') }}" alt="aogashima"></a>
                         </div>
                     </div>
                 </div>

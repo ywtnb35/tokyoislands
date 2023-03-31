@@ -8,12 +8,11 @@
     <div class="main">
         <div class="container">
             <div class="col-img">
-                <p>大島</p>
-                <img src="{{ asset('storage/大島.jpg') }}">
+                <p>{{ $island_name }}</p>
+                <img src="{{ asset('storage/' . $island_img) }}">
             </div>
         </div>
     
-        <br>
         <br>
     
         <div class="col-md-8 mx-auto">

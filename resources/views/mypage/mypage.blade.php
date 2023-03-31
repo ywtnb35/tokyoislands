@@ -5,9 +5,9 @@
 
 @section('content')
 <div class="page">
-    <div class="text">ユーザー名
+    <div class="text_username">
+        <p>ユーザー名</p>
         <br>
-        <input type="text">
     </div>
     <hr>
     <div class="photolist"></div>

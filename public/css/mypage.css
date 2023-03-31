@@ -3,7 +3,11 @@
     margin:0 auto;
 }
 
-.text {
+.text_username p{
+    color:#c0c0c0;
     text-align:center;
+    size:50px;
 }
-
+/*.text {*/
+/*    text-align:center;*/
+/*}*/
