@@ -12,6 +12,11 @@ class PhotoController extends Controller
         return view('island.photo.detail');
     }
     
+    public function add()
+    {
+        return view('island.photo.create');
+    }
+    
     //写真投稿
     public function create()
     {
