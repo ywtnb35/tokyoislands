@@ -18,8 +18,17 @@ class PhotoController extends Controller
     }
     
     //写真投稿
-    public function create()
+    public function create(Request $request)
     {
+        // $post = new create;
+        // $post -> usre_id = Auth::id();
+        
+        // $img = $request ->file('img');
+        // $path = $img ->create('public/img');
+        // $post ->img = str_replace('public/', '', $path);
+        
+        // $post ->save();
+        
         return view('island.photo.create');
     }
 }
