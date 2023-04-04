@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="new_post">
-  <form action="#" method="post"　enctype="multipart/form-data">
+  <form action="#"　name="photo" method="post" enctype="multipart/form-data">
     @csrf
     <div class="selection">
       <h3>新規作成</h3>
@@ -14,7 +14,7 @@
       <div class="shima_name">
         <label>島</label>
         <br>
-          <select name="islands"> 
+          <select name="islands_name"> 
               <option value="oshima">大島</option>
               <option value="toshima">利島</option>
               <option value="niijima">新島</option>
@@ -52,7 +52,8 @@
     
     <div class="img_post">
       <label for="img">画像</label>
-      <input type="file" name="img" id="img">
+      <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
+      <input type="file" name="img" id="img" accept="image/*">
     </div>
     
     <br>

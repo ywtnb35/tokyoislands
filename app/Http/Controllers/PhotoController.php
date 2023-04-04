@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Photo;
 
 class PhotoController extends Controller
 {
     //写真一覧を表示
-    public function index()
+    public function index(Request $request)
     {
-        return view('island.photo.detail');
+        return view('island.photo.top');
     }
     
     public function add()
@@ -20,16 +21,26 @@ class PhotoController extends Controller
     //写真投稿
     public function create(Request $request)
     {
-        // $post = new create;
-        // $post -> usre_id = Auth::id();
+        $photo = new Photo;
+        $form = $request->all();
         
-        // $img = $request ->file('img');
-        // $path = $img ->create('public/img');
-        // $post ->img = str_replace('public/', '', $path);
+        $path = $request->file('image')->store('public/image');
+        $photo->image_path = basename($path);
         
-        // $post ->save();
         
-        return view('island.photo.create');
+        $photo ->save();
+        
+        $photo->fill($form);
+        $photo->save();
+        
+        return redirect('island/top');
+    }
+    
+    public function store(Request $request)
+    {
+        $request->hasFile('photo');
+        
+        return redirect() -> route('photo.index');
     }
 }
 
