@@ -10,7 +10,8 @@ class PhotoController extends Controller
     //写真一覧を表示
     public function index(Request $request)
     {
-        return view('island.photo.top');
+        $photos = Photo::all();
+        return view('island.photo.top', ['photos' => $photos]);
     }
     
     public function add()
@@ -21,24 +22,20 @@ class PhotoController extends Controller
     //写真投稿
     public function create(Request $request)
     {
-        $photo = new Photo;
-        $form = $request->all();
-        
-        $path = $request->file('image')->store('public/image');
-        $photo->image_path = basename($path);
-        
-        
-        $photo ->save();
-        
-        $photo->fill($form);
-        $photo->save();
-        
-        return redirect('island/top');
+        return view('island/photo.create');
     }
     
     public function store(Request $request)
     {
-        $request->hasFile('photo');
+        $user = Auth::user();
+        $photo = new Photo;
+        $photo->user_id = $user->id;
+        $photo->url = $request->file('image')->store('public/image');
+        $path = $request->file('image')->store('public/image');
+        $photo->image_path = basename($path);
+        $photo->text = $request->textarea('text');
+        $photo->fill($request->all());
+        $photo->save();
         
         return redirect() -> route('photo.index');
     }

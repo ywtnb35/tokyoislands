@@ -54,13 +54,12 @@
       <label for="img">画像</label>
       <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
       <input type="file" name="img" id="img" accept="image/*">
-    </div>
     
     <br>
     <br>
     
     <div class="describe">
-      <textarea rows="10" cols="80" placeholder="テキスト"></textarea>
+      <textarea rows="10" cols="80" placeholder="テキスト" name="text"></textarea>
     </div>
     
     <br>
