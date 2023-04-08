@@ -24,9 +24,6 @@ class PhotoController extends Controller
     // 写真投稿
     public function create(Request $request)
     {
-        $request->validate([
-            'image' => 'file|image|max:2048',
-            'text' => 'required']);
             
         $photo = new Photo;
         

@@ -34,12 +34,14 @@
         
         <div class="photo-container"></div>
             <div class="island-detail">
-                @foreach($photos as $photo)
-                <div class="photo-item">
-                    <img src="{{ ('storage/image/' , $photo-> image_path) }}" alt="">
-                    <p>{{ $photo -> text }}</p>
-                </div>
-                @endforeach
+                @isset($photos)
+                    @foreach($photos as $photo)
+                    <div class="photo-item">
+                        <img src="{{ ('storage/image/' . $photo-> image_path) }}" alt="">
+                        <p>{{ $photo -> text }}</p>
+                    </div>
+                    @endforeach
+                @endisset
             </div>
         </div>
     </div>

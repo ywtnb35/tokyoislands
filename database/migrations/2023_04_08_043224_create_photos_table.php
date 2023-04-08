@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
             $table->string('island_name')->default('');
-            $table->string('island_image');
+            $table->string('island_image')->default('');
             $table->string('user_id');
-            $table->string('genre');
+            $table->string('genre')->default('');
             $table->string('text');
             $table->timestamps();
         });
