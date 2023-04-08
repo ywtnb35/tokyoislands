@@ -10,7 +10,7 @@ class IslandController extends Controller
     public function index(Request $request)
     {
         $island_id = $request->input('id');
-        $island_name = "";
+        $island_names = ['大島','利島','新島','式根島','神津島','三宅島','御蔵島','八丈島','青ヶ島'];
         $island_img = "";
         
         switch($island_id){

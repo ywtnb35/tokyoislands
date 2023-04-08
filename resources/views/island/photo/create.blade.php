@@ -5,11 +5,16 @@
 
 @section('content')
 <div class="new_post">
-  <form action="#"　name="photo" method="post" enctype="multipart/form-data">
+  <form action="#" method="post" enctype="multipart/form-data">
     @csrf
     <div class="selection">
       <h3>新規作成</h3>
       <br>
+      <br>
+      <div class="name">
+        <label for="username">ユーザー名</label>
+        <input type="text" name="username" value="{{ Auth::user()->name }}" disabled>
+      </div> 
       <br>
       <div class="shima_name">
         <label>島</label>
@@ -52,7 +57,6 @@
     
     <div class="img_post">
       <label for="img">画像</label>
-      <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
       <input type="file" name="img" id="img" accept="image/*">
     
     <br>

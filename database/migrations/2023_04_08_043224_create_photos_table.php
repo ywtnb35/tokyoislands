@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->string('island_name');
-            $table->string('island_img');
+            $table->string('island_name')->default('');
+            $table->string('island_image');
+            $table->string('user_id');
             $table->string('genre');
-            $table->string('comment');
+            $table->string('text');
             $table->timestamps();
         });
     }
