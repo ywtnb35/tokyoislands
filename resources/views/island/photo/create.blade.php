@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="new_post">
-  <form action="#" method="post" enctype="multipart/form-data">
+  <form action="{{ route('photo.create') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="selection">
       <h3>新規作成</h3>

@@ -34,7 +34,7 @@ class PhotoController extends Controller
         }
         
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('public/image');
+            $path = $request->file('image')->store('public/storge/image');
             $photo->image_path = basename($path);
         }
         
@@ -42,12 +42,12 @@ class PhotoController extends Controller
         
         $photo->save(); 
         
-        return redirect()->route('photo.create');
+        return redirect()->route('photo.add');
     }
     
     public function show(Request $request,$id)
     {
-        $photos = photo::where('user_id', $id)->get();
+        $photos = Photo::where('user_id', $id)->get();
         
         return view('island.top', ['photos' => $photos]);
     }
