@@ -24,7 +24,7 @@ Route::controller(TopController::class)->group(function(){
 
 use App\Http\Controllers\IslandController;
 Route::controller(IslandController::class)->group(function(){
-    Route::get('/island/top','index')->name('island/top');
+    Route::get('/island/top','index')->name('island.top');
 });
 
 use App\Http\Controllers\UserController;
@@ -33,7 +33,7 @@ Route::controller(UserController::class)->group(function(){
 });
 
 use App\Http\Controllers\PhotoController;
-Route::controller(PhotoController::class)->prefix('island/{island_id}')->group(function(){
+Route::controller(PhotoController::class)->prefix('island')->group(function(){
     Route::get('photo.detail','index')->name('photos.index');
     Route::get('photo.create','add')->name('photo.add')->middleware('auth');
     Route::post('photo.create','create')->name('photo.create')->middleware('auth');

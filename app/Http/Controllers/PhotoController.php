@@ -13,7 +13,7 @@ class PhotoController extends Controller
     // 写真一覧を表示
     public function index(Request $request,$id)
     {
-      $photos = Photo::all(); 
+      $photos = Photo::all(); //写真データを取得
         foreach($photos as $photo){   //取得した写真を$photos配列に代入
             $photo->url =Storage::url($photo->filename);  //それぞれの写真にurlを生成。生成したurlをurl属性にセット
         }
@@ -21,9 +21,10 @@ class PhotoController extends Controller
         return view('island.top', compact('photos'));  //ビューに$photos変数を使用して渡す
     }
     
+    //写真投稿画面を表示
     public function add()
     {
-        return view('island/photo.create');
+        return view('island.photo.create');
     }
     
     // 写真投稿
@@ -34,18 +35,18 @@ class PhotoController extends Controller
         
         $user = Auth::user(); // ログインユーザーを取得
         
-        if ($user !== null) {
+        if ($user !== null) {   // ログインしているユーザーのidをphotoテーブルに保存
             $photo->user_id = $user->id;
         }
         
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')) {  //画像ファイルがアップロードされていればファイルを保存しpathをphotoテーブルに保存
             $path = $request->file('image')->store('public/storage/image');
             $photo->image_path = basename($path);
         }
         
-        $photo->text = $request->input('text');
+        $photo->text = $request->input('text');  //フォームから入力されたテキストをphotoテーブルに保存
         
-        $photo->save(); 
+        $photo->save(); //データベースに保存
         
         return redirect()->route('island.top');
     }
