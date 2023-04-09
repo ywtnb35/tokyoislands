@@ -32,12 +32,12 @@
         
         <div class="float_clr"></div>
         
-        <div class="photo-container"></div>
+        <div class="photo-container">
             <div class="island-detail">
                 @isset($photos)
                     @foreach($photos as $photo)
                     <div class="photo-item">
-                        <img src="{{ ('storage/image/' . $photo-> image_path) }}" alt="">
+                        <img src="{{ ('storage/' . $photo-> filename) }}" alt="">
                         <p>{{ $photo -> text }}</p>
                     </div>
                     @endforeach

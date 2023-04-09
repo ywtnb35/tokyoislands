@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Photo;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class PhotoController extends Controller
 {
     // 写真一覧を表示
-    public function index(Request $request)
+    public function index(Request $request,$id)
     {
-        $photos = Photo::all();
-        return view('island.top', ['photos' => $photos]);
+      $photos = Photo::all(); 
+        foreach($photos as $photo){   //取得した写真を$photos配列に代入
+            $photo->url =Storage::url($photo->filename);  //それぞれの写真にurlを生成。生成したurlをurl属性にセット
+        }
+        
+        return view('island.top', compact('photos'));  //ビューに$photos変数を使用して渡す
     }
     
     public function add()
@@ -34,7 +39,7 @@ class PhotoController extends Controller
         }
         
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('public/storge/image');
+            $path = $request->file('image')->store('public/storage/image');
             $photo->image_path = basename($path);
         }
         
@@ -42,13 +47,13 @@ class PhotoController extends Controller
         
         $photo->save(); 
         
-        return redirect()->route('photo.add');
+        return redirect()->route('island.top');
     }
     
     public function show(Request $request,$id)
     {
         $photos = Photo::where('user_id', $id)->get();
         
-        return view('island.top', ['photos' => $photos]);
+        return view('island.top', compact('photos'));
     }
 }

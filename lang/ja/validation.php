@@ -166,10 +166,11 @@ return [
     */
 
     'attributes' => [
-        'islands_name' => '島',
-        'genre_name' => 'ジャンル',
-        'img_kind' => '画像種類',
-        'img_post' => '画像選択',
-        'describe' => 'テキスト'],
+        // 'islands_name' => '島',
+        // 'genre_name' => 'ジャンル',
+        // 'img_kind' => '画像種類',
+        // 'img_post' => '画像選択',
+        // 'describe' => 'テキスト'
+        ],
 
 ];
