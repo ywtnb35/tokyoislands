@@ -50,6 +50,7 @@ class PhotoController extends Controller
         
         $photo->text = $request->input('text');  //フォームから入力されたテキストをphotoテーブルに保存
         
+        $photo->fill($request->all());
         $photo->save(); //データベースに保存
         
         return redirect()->route('island.top');
