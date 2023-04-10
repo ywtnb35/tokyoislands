@@ -33,6 +33,10 @@ class PhotoController extends Controller
             
         $photo = new Photo;
         
+        $islands_name = $request->input('islands_name');
+        $genre = $request->input('genre');
+        $img_kins = $request->input('img_kins');
+        
         $user = Auth::user(); // ログインユーザーを取得
         
         if ($user !== null) {   // ログインしているユーザーのidをphotoテーブルに保存
@@ -53,8 +57,9 @@ class PhotoController extends Controller
     
     public function show(Request $request,$id)
     {
-        $photos = Photo::where('user_id', $id)->get();
+        $user = Auth::user();  //ログインユーザーを取得
+        $photos = Photo::where('user_id', $id)->get(); //ユーザーが投稿した写真を取得する
         
-        return view('island.top', compact('photos'));
+        return view('island.top', compact('photos'));  //ビューに写真を投稿する
     }
 }
