@@ -33,9 +33,8 @@ class PhotoController extends Controller
             
         $photo = new Photo;
         
-        $islands_name = $request->input('islands_name');
-        $genre = $request->input('genre');
-        $img_kins = $request->input('img_kins');
+
+       
         
         $user = Auth::user(); // ログインユーザーを取得
         
@@ -43,14 +42,14 @@ class PhotoController extends Controller
             $photo->user_id = $user->id;
         }
         
-        if ($request->hasFile('image')) {  //画像ファイルがアップロードされていればファイルを保存しpathをphotoテーブルに保存
-            $path = $request->file('image')->store('public/storage/image');
-            $photo->image_path = basename($path);
+        if ($request->hasFile('img')) {  //画像ファイルがアップロードされていればファイルを保存しpathをphotoテーブルに保存
+            $path = $request->file('img')->store('public/img');
+            $photo->island_image = basename($path);
         }
-        
+        $photo->island_name = $request->input('islands_name');
+        $photo->genre = $request->input('genre');
         $photo->text = $request->input('text');  //フォームから入力されたテキストをphotoテーブルに保存
-        
-        $photo->fill($request->all());
+      
         $photo->save(); //データベースに保存
         
         return redirect()->route('island.top');
@@ -59,7 +58,7 @@ class PhotoController extends Controller
     public function show(Request $request,$id)
     {
         $user = Auth::user();  //ログインユーザーを取得
-        $photos = Photo::where('user_id', $id)->get(); //ユーザーが投稿した写真を取得する
+        $photos = Photo::where('islnad_name', $id)->get(); //ユーザーが投稿した写真を取得する
         
         return view('island.top', compact('photos'));  //ビューに写真を投稿する
     }

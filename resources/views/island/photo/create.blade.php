@@ -41,15 +41,6 @@
             <option value="creature">動植物</option>
           </select>
       </div>
-      
-      <div class="img_kins">
-        <label>画像種類</label>
-        <br>
-          <select name="img_kins">
-            <option value="jpg">.jpg</option>
-            <option value="png">.png</option>
-          </select>
-      </div>
     </div>
     
     <br>

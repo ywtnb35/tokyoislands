@@ -37,8 +37,8 @@
                 @isset($photos)
                     @foreach($photos as $photo)
                     <div class="photo-item">
-                        <img src="{{ ('storage/' . $photo-> filename) }}" alt="">
-                        <p>{{ $photo -> text }}</p>
+                        <img src="{{ ('storage/' . $photo->island_img) }}" alt="">
+                        <p>{{ $photo->text }}</p>
                     </div>
                     @endforeach
                 @endisset
