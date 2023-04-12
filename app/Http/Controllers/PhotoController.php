@@ -10,17 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
-    // 写真一覧を表示
-    public function index(Request $request,$id)
-    {
-      $photos = Photo::all(); //写真データを取得
-        foreach($photos as $photo){   //取得した写真を$photos配列に代入
-            $photo->url =Storage::url($photo->filename);  //それぞれの写真にurlを生成。生成したurlをurl属性にセット
-        }
-        
-        return view('island.top', compact('photos'));  //ビューに$photos変数を使用して渡す
-    }
-    
     //写真投稿画面を表示
     public function add()
     {
@@ -55,11 +44,11 @@ class PhotoController extends Controller
         return redirect()->route('island.top');
     }
     
-    public function show(Request $request,$id)
+    //写真を表示
+    public function index(Request $request,$id)
     {
-        $user = Auth::user();  //ログインユーザーを取得
-        $photos = Photo::where('islnad_name', $id)->get(); //ユーザーが投稿した写真を取得する
+        $photos = Photo::where('islnad_name', $id)->get(); 
         
-        return view('island.top', compact('photos'));  //ビューに写真を投稿する
+        return view('island.top', ['photos'=>$photos]);  //island/topに写真を表示する
     }
 }
