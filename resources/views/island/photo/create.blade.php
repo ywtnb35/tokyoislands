@@ -20,15 +20,15 @@
         <label>島</label>
         <br>
           <select name="islands_name"> 
-              <option value="oshima">大島</option>
-              <option value="toshima">利島</option>
-              <option value="niijima">新島</option>
-              <option value="shikinejima">式根島</option>
-              <option value="kouzushima">神津島</option>
-              <option value="miyakejima">三宅島</option>
-              <option value="mikurashima">御蔵島</option>
-              <option value="hachijojima">八丈島</option>
-              <option value="aogashima">青ヶ島</option>
+              <option value="大島">大島</option>
+              <option value="利島">利島</option>
+              <option value="新島">新島</option>
+              <option value="式根島">式根島</option>
+              <option value="神津島">神津島</option>
+              <option value="三宅島">三宅島</option>
+              <option value="御蔵島">御蔵島</option>
+              <option value="八丈島">八丈島</option>
+              <option value="青ヶ島">青ヶ島</option>
           </select>
       </div>
       

@@ -41,14 +41,14 @@ class PhotoController extends Controller
       
         $photo->save(); //データベースに保存
         
-        return redirect()->route('island.top');
+        return redirect()->route('island.top', ['id' => $photo->island_name]);
     }
     
     //写真を表示
     public function index(Request $request,$id)
     {
         $photos = Photo::where('islnad_name', $id)->get(); 
-        
+        dd($photos);
         return view('island.top', ['photos'=>$photos]);  //island/topに写真を表示する
     }
 }
