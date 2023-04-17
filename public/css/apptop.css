@@ -31,6 +31,11 @@ nav{
   opacity:0;
 }
 
+nav .active{
+  left:0;
+  opacity:1;
+}
+
 nav .inner{
   padding:25px;
 }
@@ -92,3 +97,4 @@ nav .inner ul li a:hover {
 .toggle-btn span:nth-child(3){
   top:24px;
 }
+

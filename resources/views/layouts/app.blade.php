@@ -15,6 +15,7 @@
 
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    <script src="{{ secure_asset('js/nav.js') }}"></script>
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/apptop.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/top.css') }}" rel="stylesheet">
@@ -24,18 +25,20 @@
     <link href="{{ secure_asset('css/create.css') }}" rel="stylesheet">
 </head>
 <body>
+<body>
     <div class="header">
         <div class="logo">
                 <img src="{{ asset('storage/logo.png') }}" alt="ロゴ">
         </div>
+        
         <div class="navArea">
             <nav>
                 <div class="inner">
                     <ul>
-                        <li><a href="">伊豆諸島一覧</a></li>
-                        <li><a href="">新規作成</a></li>
-                        <li><a href="">マイページ</a></li>
-                        <li><a href="">ログアウト</a></li>
+                        <li><a href="{{ url('/top') }}">伊豆諸島一覧</a></li>
+                        <li><a href="{{ url('/island/photo/create') }}">新規作成</a></li>
+                        <li><a href="{{ url('mypage') }}">マイページ</a></li>
+                        <li><a href="{{ url('') }}">ログアウト</a></li>
                     </ul>
                 </div>
             </nav>

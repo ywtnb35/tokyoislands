@@ -71,13 +71,14 @@
 }
 
 .float_clr{
-  float:clear;
+  clear:both;
 }
 
-.island-detail{
-  margin-top:30px;
+.photo-item {
+  align-items:center;
+  justify-content:center;
   grid-template-columns: repeat(2, 1fr);
-  display: grid;
+  display:grid;
   gap: 27px;
 }
 
