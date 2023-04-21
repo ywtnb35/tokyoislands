@@ -79,8 +79,10 @@
   justify-content:center;
   grid-template-columns: repeat(2, 1fr);
   display:grid;
-  gap: 27px;
+  gap: 25px;
+  margin-bottom:60px;
 }
+
 
 @media (max-width: 468px){
   .island-container {

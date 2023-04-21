@@ -25,23 +25,26 @@
     <link href="{{ secure_asset('css/create.css') }}" rel="stylesheet">
 </head>
 <body>
-<body>
+    <a href="/top">
     <div class="header">
         <div class="logo">
                 <img src="{{ asset('storage/logo.png') }}" alt="ロゴ">
         </div>
-        
+    </a>
         <div class="navArea">
-            <nav>
-                <div class="inner">
-                    <ul>
-                        <li><a href="{{ url('/top') }}">伊豆諸島一覧</a></li>
-                        <li><a href="{{ url('/island/photo/create') }}">新規作成</a></li>
-                        <li><a href="{{ url('mypage') }}">マイページ</a></li>
-                        <li><a href="{{ url('') }}">ログアウト</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <button class="navbtn" onClick="document.querySelector('html').classList.toggle('open')">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+                <span class="sr-only">MENU</span>
+            </button>
+          <nav class="nav">
+      		<ul>
+    		　 <li><a href="{{ url('/top') }}">伊豆諸島一覧</a></li>
+               <li><a href="{{ url('/island/photo/create') }}">新規作成</a></li>
+               <li><a href="{{ url('mypage') }}">マイページ</a></li>
+               <li><a href="{{ url('') }}">ログアウト</a></li>
+    		</ul>
+    	</nav>
             <div class="toggle-btn">
                 <span></span>
                 <span></span>
@@ -53,5 +56,6 @@
     <main class="py-4">
         @yield('content')
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>

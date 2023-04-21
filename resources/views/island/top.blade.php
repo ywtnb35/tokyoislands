@@ -26,8 +26,12 @@
         
         <div class="genre_btn">
             <div class="genre_btn_l">風 景</div>
+                <a href="/island/top?name={{ $island_name }}&genre=huukei">風景</a>
             <div class="genre_btn_l">食べ物</div>
+                 <a href="/island/top?name={{ $island_name }}&genre=food">食べ物</a>
             <div class="genre_btn_l">動植物</div>
+                <a href="/island/top?name={{ $island_name }}&genre=creature">動植物</a>
+
         </div>
         
         <div class="float_clr"></div>
@@ -38,7 +42,7 @@
                     @foreach($photos as $photo)
                     <div class="photo-item">
                         <img src="{{ secure_asset('storage/img/' . $photo->island_image) }}" alt="">
-                        <p>{{ $photo->text }}</p>
+                            <p>{{ $photo->text }}</p>
                     </div>
                     @endforeach
                 @endisset
