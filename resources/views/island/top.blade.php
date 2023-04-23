@@ -25,12 +25,9 @@
         <br>
         
         <div class="genre_btn">
-            <div class="genre_btn_l">風 景</div>
-                <a href="/island/top?name={{ $island_name }}&genre=huukei">風景</a>
-            <div class="genre_btn_l">食べ物</div>
-                 <a href="/island/top?name={{ $island_name }}&genre=food">食べ物</a>
-            <div class="genre_btn_l">動植物</div>
-                <a href="/island/top?name={{ $island_name }}&genre=creature">動植物</a>
+            <a href="/island/top?name={{ $island_name }}&genre=huukei" class="genre_btn_l">風景</a>
+            <a href="/island/top?name={{ $island_name }}&genre=food" class="genre_btn_l">食べ物</a>
+            <a href="/island/top?name={{ $island_name }}&genre=creature" class="genre_btn_l">動植物</a>
 
         </div>
         
