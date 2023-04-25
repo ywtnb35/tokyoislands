@@ -8,6 +8,22 @@
     text-align:center;
     size:50px;
 }
-/*.text {*/
-/*    text-align:center;*/
-/*}*/
+
+.photolist{
+    align-items:center;
+    justify-content:center;
+    grid-template-columns: repeat(2, 1fr);
+    display:grid;
+    gap: 25px;
+    margin-bottom:60px;
+}
+
+.photo-item {
+    position: relative;
+}
+
+.explanation {
+    position: absolute;
+    bottom: -50px;
+    text-align:center;
+}

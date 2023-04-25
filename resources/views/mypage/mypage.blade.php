@@ -12,9 +12,14 @@
     </div>
     <hr>
     <div class="photolist">
-    @foreach ($photos as $photo)
-    <img src="{{ asset('public/storage/img' . $photo->island_img) }}" alt="">
-    @endforeach
+    @isset($photos)
+        @foreach($photos as $photo)
+            <div class="photo-item">
+                <img src="{{ secure_asset('storage/img/' . $photo->island_image) }}" alt="">
+                    <p class="explanation">{{ $photo->text }}</p>
+            </div>
+        @endforeach
+    @endisset
     </div>
 </div>
 @endsection

@@ -39,7 +39,7 @@
                     @foreach($photos as $photo)
                     <div class="photo-item">
                         <img src="{{ secure_asset('storage/img/' . $photo->island_image) }}" alt="">
-                            <p>{{ $photo->text }}</p>
+                            <p class="explanation">{{ $photo->text }}</p>
                     </div>
                     @endforeach
                 @endisset

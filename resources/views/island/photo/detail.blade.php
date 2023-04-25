@@ -19,12 +19,14 @@
     
     <div class="img_container">
             <div class="img_detail">
-                <img src="">投稿写真表示<br>
+                <a href="{{ route('photo.show',['id'=>$photo->id]) }}"></a>
+                <img src="{{ $photo->img_url}}">
             </div>
         </div>
-
+    <br>
     <div class="text">
         <textarea rows="10" cols="80">コメント</textarea>
+        <p>{{ $photo->text }}</p>
     </div>
  
 </div>
