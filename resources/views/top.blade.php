@@ -41,7 +41,7 @@
                         </div>
                         <div class="island">
                             <P>八丈島</P>
-                            <a href="island/top?name=八丈島" class="island-link"><img src=" {{ asset('storage/八丈.jpg') }}" alt="hachijyojima"></a>
+                            <a href="island/top?name=八丈島" class="island-link"><img src=" {{ asset('storage/八丈島.jpg') }}" alt="hachijyojima"></a>
                         </div>
                          <div class="island">
                              <P>青ヶ島</P>

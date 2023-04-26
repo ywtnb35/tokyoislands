@@ -37,6 +37,7 @@ Route::controller(PhotoController::class)->prefix('island')->group(function(){
     Route::get('photo/detail','index')->name('photos.index');
     Route::get('photo/create','add')->name('photo.add')->middleware('auth');
     Route::post('photo/create','create')->name('photo.create')->middleware('auth');
+    Route::get('photo/show','show')->name('photo.show');
 });
 
 

@@ -19,13 +19,12 @@
     
     <div class="img_container">
             <div class="img_detail">
-                <a href="{{ route('photo.show',['id'=>$photo->id]) }}"></a>
-                <img src="{{ $photo->img_url}}">
+                <img src="{{ secure_asset('storage/img/' .$photo->island_image) }}">
             </div>
         </div>
     <br>
     <div class="text">
-        <textarea rows="10" cols="80">コメント</textarea>
+        <label>コメント</label>
         <p>{{ $photo->text }}</p>
     </div>
  
