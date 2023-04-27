@@ -11,11 +11,6 @@
     
     <br>
     
-    <div class="data_container">
-        <div class="photo_data">島名</div>
-        <div class="photo_data">ジャンル</div>
-    </div>
-    
     
     <div class="img_container">
             <div class="img_detail">
@@ -24,7 +19,7 @@
         </div>
     <br>
     <div class="text">
-        <label>コメント</label>
+        <label>＜コメント＞</label>
         <p>{{ $photo->text }}</p>
     </div>
  

@@ -12,8 +12,13 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $user_id = $request->user()->id;
-        $photos = Photo::where('user_id',$user_id)->get();
-        return view('mypage/mypage',['photos'=>$photos, 'user_id'=>$user_id]);
+        $user = $request->user();
+        if ($user) {
+            $user_id = $user->id;
+            $photos = Photo::where('user_id', $user_id)->get();
+            return view('mypage/mypage', ['photos' => $photos, 'user_id' => $user_id]);
+        } else {
+            return redirect('island.top');
+        }
     }
 }

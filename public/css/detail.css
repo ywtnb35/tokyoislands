@@ -16,13 +16,7 @@
     text-align:center;
 }
 
-.img_container {
-    border:1px solid #DCDCDC;
-    width:620px;
-    height:426px;
-    margin:100px 170px;
-}
-
 .img_detail {
+    margin:100px 0;
     text-align:center;
 }
