@@ -20,7 +20,7 @@
     <br>
     <div class="text">
         <label>＜コメント＞</label>
-        <p>{{ $photo->text }}</p>
+        <p class="txt_size">{{ $photo->text }}</p>
     </div>
  
 </div>
