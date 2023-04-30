@@ -44,7 +44,7 @@ class PhotoController extends Controller
     //写真を表示
     public function index(Request $request,$id)
     {
-        $photos = Photo::where('island_name',$id)->sortByDesc('created_at')->get();
+        $photos = Photo::where('island_name',$id)->get();
         
         return view('island.top', ['photos'=>$photos]);  //island/topに写真を表示する
     }
