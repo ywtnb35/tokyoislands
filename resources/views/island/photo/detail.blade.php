@@ -6,11 +6,12 @@
 @section('content')
 <div id="detail">
     <div class="username">
-        <h2>ユーザー名</h2>
+        <h2>{{ $photo->user->name }}</h2>
     </div>
     
+    <div>{{ $photo->island_name }}</div>
+    <div>{{ $photo->genre }}</div>
     <br>
-    
     
     <div class="img_container">
             <div class="img_detail">

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
+    use HasFactory;
     protected $table = 'photos';
     
     protected $fillable = [
@@ -22,5 +23,4 @@ class Photo extends Model
         return $this->belongsTo('App\Models\User');
     }
     
-    use HasFactory;
 }

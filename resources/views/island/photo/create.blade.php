@@ -36,9 +36,9 @@
         <label>ジャンル</label>
         <br>
           <select name="genre">
-            <option value="huukei">風景</option>
-            <option value="food">食べ物</option>
-            <option value="creature">動植物</option>
+            <option value="風景">風景</option>
+            <option value="食べ物">食べ物</option>
+            <option value="動植物">動植物</option>
           </select>
       </div>
     </div>
