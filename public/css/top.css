@@ -1,58 +1,57 @@
 @charset "UTF-8";
-
 /*伊豆諸島一覧*/
-.islands-list{
+.islands-list {
   width: 100%;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
-h2{
-  text-align:center;
-  margin:50px;
-  display:block;
-  font-size:35px;
+h2 {
+  text-align: center;
+  margin: 50px;
+  display: block;
+  font-size: 35px;
 }
 
-.island-container{
+.island-container {
   grid-template-columns: repeat(2, 1fr);
   display: grid;
   gap: 27px;
 }
 
-.island{
-  display:flex;
+.island {
+  display: flex;
   flex-direction: column;
   background-color: #333;
-  position:relative;
+  position: relative;
 }
 
-.island p{
-  position:absolute;
+.island p {
+  position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
-  color:#ffffff;
-  font-size:45px;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 45px;
 }
 
-.island img{
-  width:550px;
+.island img {
+  width: 550px;
 }
 
-section{
-  display:block;
+section {
+  display: block;
 }
 
-.w-container{
+.w-container {
   width: min(92%, 1166px);
   margin: auto;
 }
 
-.island-link{
-  width:auto;
+.island-link {
+  width: auto;
 }
 
-@media (max-width: 468px){
+@media (max-width: 468px) {
   .island-container {
     grid-template-columns: repeat(1, 1fr);
   }

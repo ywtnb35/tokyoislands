@@ -1,49 +1,59 @@
-.inner {
-  position: fixed;
-  top: 0;
-  right: 0;
-}
+@charset "UTF-8";
 
-img {
-  width: 100px; /* ロゴの幅を指定 */
-}
-nav {
-  display: flex;
-  justify-content: flex-end; /* ハンバーガーメニューを右側に配置する */
-  align-items: center;
-}
-
-.hamburger-menu {
-  display: block;
-  width: 25px;
-  height: 20px;
-  position: relative;
-  cursor: pointer;
-  margin-right: 20px; 
-}
-
-.hamburger-menu span {
-  display: block;
-  position: absolute;
-  height: 3px;
+/*伊豆諸島一覧*/
+.islands-list{
   width: 100%;
-  background: black;
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: all 0.2s ease-in-out;
+  margin:0 auto;
 }
 
-.hamburger-menu span:nth-child(1) {
-  top: 0;
+h2{
+  text-align:center;
+  margin:50px;
+  display:block;
+  font-size:35px;
 }
 
-.hamburger-menu span:nth-child(2),
-.hamburger-menu span:nth-child(3) {
-  top: 8px;
+.island-container{
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  gap: 27px;
 }
 
-.hamburger-menu span:nth-child(4) {
-  top: 16px;
+.island{
+  display:flex;
+  flex-direction: column;
+  background-color: #333;
+  position:relative;
+}
+
+.island p{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color:#ffffff;
+  font-size:45px;
+}
+
+.island img{
+  width:550px;
+}
+
+section{
+  display:block;
+}
+
+.w-container{
+  width: min(92%, 1166px);
+  margin: auto;
+}
+
+.island-link{
+  width:auto;
+}
+
+@media (max-width: 468px){
+  .island-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -1,16 +1,98 @@
-.btn-top{
-  background:gold;
-  padding:1em 1em;
-  border:black 2px solid;
-  text-decoration:none;
-  color:black;
-  font-size:1.5em;
-  font-family:sans-serif;
+.main {
+  width:1200px;
+  margin:0 auto;
 }
 
-.btn-genre-scenery
-.btn-genre-food
-.btn-genre-flora{
-display: flex;
-justify-content: center;
+.col-img {
+  margin-top:5px;
+  text-align:center;
+  position:relative;
+}
+
+.col-img p {
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color:#ffffff;
+  font-size:55px;
+}
+
+.island_link {
+  margin-top:10px;
+  text-align: center;
+}
+
+.button {
+  display:inline-block;
+  margin:10px ;
+  border:10px;         
+  font-size: 16pt;  
+  text-align: center; 
+  text-decoration:none;
+  cursor: pointer;    
+  padding: 20px 20px;  
+  background-color: #dcdcdc;
+  color:#696969;
+  line-height: 1em;
+  border-radius:10px;
+}
+
+.genre-container {
+  margin-top:10px;
+  display:inline-block;
+  text-align:center;
+
+}
+.genre {
+  width:200px;
+}
+
+.island-detail{
+  margin-top:30px;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  gap: 27px;
+}
+.genre_btn{
+  justify-content:center;
+}
+
+.genre_btn_l{
+  background-color: #b0c4de;
+  float:left;
+  width:360px;
+  height:70px;
+  text-align:center;
+  line-height: 70px;
+  font-size: 20px;
+  margin-left:30px;
+  border-radius:10px;
+  text-decoration: none;
+  color:#000000;
+}
+
+.float_clr{
+  clear:both;
+}
+
+.photo-item {
+  align-items:center;
+  justify-content:center;
+  grid-template-columns: repeat(2, 1fr);
+  display:grid;
+  gap: 25px;
+  margin-bottom:60px;
+}
+
+.explanation{
+  text-align:center;
+  font-size:15px;
+  
+}
+
+@media (max-width: 468px){
+  .island-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
