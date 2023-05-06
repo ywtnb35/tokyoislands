@@ -29,7 +29,7 @@ Route::controller(IslandController::class)->group(function(){
 
 use App\Http\Controllers\UserController;
 Route::controller(UserController::class)->group(function(){
-    Route::get('mypage','index');
+    Route::get('mypage','index')->name('mypage');
 });
 
 use App\Http\Controllers\PhotoController;
@@ -42,4 +42,5 @@ Route::controller(PhotoController::class)->prefix('island')->group(function(){
 
 
 Auth::routes();
+
 

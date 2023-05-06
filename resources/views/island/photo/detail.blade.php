@@ -6,7 +6,7 @@
 @section('content')
 <div id="detail">
     <div class="username">
-        <h2>{{ $photo->user->name }}</h2>
+        <h2><a href="{{ route('mypage', ['id' => $photo->user->id]) }}">{{ $photo->user->name }}</a></h2>
     </div>
     
     <div>{{ $photo->island_name }}</div>
