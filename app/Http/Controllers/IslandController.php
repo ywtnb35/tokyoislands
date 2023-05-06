@@ -22,5 +22,13 @@ class IslandController extends Controller
         
         return view('island.top', ['island_name'=> $island_name, 'island_img'=> $island_img, 'photos'=> $photos]);
     }
+    
+    public function create(Request $request)
+    {
+        if(!auth()->check()){
+            return redirect()->route('register');
+        }
+        return view('islnadphoto.create');
+    }
 }
 

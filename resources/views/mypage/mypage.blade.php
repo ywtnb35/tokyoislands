@@ -7,7 +7,7 @@
 
 <div class="page">
     <div class="text_username">
-        <p>{{ $user_id }}</p>
+        <p>{{ $user_name }}</p>
         <br>
     </div>
     <hr>
