@@ -16,7 +16,8 @@ class UserController extends Controller
         if ($user) {
             $user_id = $user->id;
             $photos = Photo::where('user_id', $user_id)->get();
-            return view('mypage/mypage', ['photos' => $photos, 'user_id' => $user_id]);
+            $user_name = $user->name;
+            return view('mypage/mypage', ['photos' => $photos, 'user_id' => $user_id,'user_name' => $user_name]);
         } else {
             return redirect('island.top');
         }
