@@ -57,4 +57,12 @@ class PhotoController extends Controller
         }
         return view('island.photo.detail',['photo'=>$photo]);
     }
+    
+    public function delete(Request $request)
+    {
+        $photo = Photo::find($request -> id);
+        $photo->delete();
+        
+        return redirect()->route('mypage');
+    }
 }
