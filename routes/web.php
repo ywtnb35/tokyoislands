@@ -30,6 +30,7 @@ Route::controller(IslandController::class)->group(function(){
 use App\Http\Controllers\UserController;
 Route::controller(UserController::class)->group(function(){
     Route::get('mypage','index')->name('mypage');
+    Route::get('mypagedetail/{id}','detail')->name('mypage.detail');
 });
 
 use App\Http\Controllers\PhotoController;
