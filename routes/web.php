@@ -30,7 +30,6 @@ Route::controller(IslandController::class)->group(function(){
 use App\Http\Controllers\UserController;
 Route::controller(UserController::class)->group(function(){
     Route::get('mypage','index')->name('mypage');
-    Route::get('mypagedetail/{id}','detail')->name('mypage.detail');
 });
 
 use App\Http\Controllers\PhotoController;
@@ -39,6 +38,7 @@ Route::controller(PhotoController::class)->prefix('island')->group(function(){
     Route::get('photo/create','add')->name('photo.add')->middleware('auth');
     Route::post('photo/create','create')->name('photo.create')->middleware('auth');
     Route::get('photo/show','show')->name('photo.show');
+    Route::get('mypage/detail','detail')->name('mypage.detail');
     Route::get('photo/delete', 'delete')->name('photo.delete');
 });
 

@@ -22,12 +22,5 @@ class UserController extends Controller
             return redirect('island.top');
         }
     }
-    
-       public function detail(Request $request,$id)
-    {
-        $photo = Photo::find($id);
-        $user_name = $request->user()->name;
-        
-        return view('mypage.detail',['photo'=>$photo,'user_name'=>$user_name]);
-    }
+
 }

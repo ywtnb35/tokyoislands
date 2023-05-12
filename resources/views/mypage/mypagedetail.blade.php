@@ -14,7 +14,7 @@
     <div>{{ $photo->genre }}</div>
     <br>
     
-    <a href="{{ route('photo.detail',['id'=> $photo->id]) }}">マイページ詳細</a>
+    <a href="{{ route('mypage.detail',['id'=> $photo->id]) }}">マイページ詳細</a>
     <div class="img_container">
             <div class="img_detail">
                 <img src="{{ secure_asset('storage/img/' .$photo->island_image) }}">

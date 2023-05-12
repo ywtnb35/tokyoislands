@@ -58,6 +58,15 @@ class PhotoController extends Controller
         return view('island.photo.detail',['photo'=>$photo]);
     }
     
+        
+    public function detail(Request $request,$id)
+    { 
+        $photo = Photo::find($id);
+        $user_name = $request->user()->name;
+        
+        return view('mypage.detail',['photo'=>$photo,'user_name'=>$user_name]);
+    }
+    
     public function delete(Request $request)
     {
         $photo = Photo::find($request -> id);
