@@ -6,6 +6,9 @@
 @section('content')
 
 <div id="detail">
+    <div>
+        <a href="{{ route('mypage.detail', ['id' => $photo->id]) }}"></a>
+    </div>
     <div class="username">
         <p>{{ $user_name }}</p>
     </div>
@@ -14,7 +17,6 @@
     <div>{{ $photo->genre }}</div>
     <br>
     
-    <a href="{{ route('mypage.detail',['id'=> $photo->id]) }}">マイページ詳細</a>
     <div class="img_container">
             <div class="img_detail">
                 <img src="{{ secure_asset('storage/img/' .$photo->island_image) }}">
