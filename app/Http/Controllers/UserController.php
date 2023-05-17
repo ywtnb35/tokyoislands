@@ -21,7 +21,7 @@ class UserController extends Controller
             return redirect('island.top');
         }
     }
-    
+}  
     // public function detail(Request $request)
     // { 
     //     $user = $request->user();
@@ -35,4 +35,3 @@ class UserController extends Controller
     //     return view('mypage/mypagedetail',['photo'=>$photo,'user_name'=>$user_name]);
     // }
 
-}

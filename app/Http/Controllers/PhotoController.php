@@ -61,8 +61,11 @@ class PhotoController extends Controller
     public function detail(Request $request)
     { 
         $photo = Photo::find($request->id);
+        if (empty($photo)) {
+            abort(404);
+        }
         
-        return view('mypage/detail',['photo'=>$photo]);
+        return view('mypage.detail',['photo'=>$photo]);
     }
 
     

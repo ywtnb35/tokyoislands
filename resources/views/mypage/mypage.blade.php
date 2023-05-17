@@ -10,13 +10,13 @@
         <p>{{ $user_name }}</p>
         <br>
     </div>
+ 
     <hr>
     <div class="photolist">
     @isset($photos)
         @foreach($photos as $photo)
             <div class="photo-item">
-                <img src="{{ secure_asset('storage/img/' . $photo->island_image) }}" alt="">
-                    <p class="explanation">{{ $photo->text }}</p>
+                <a href="{{ route('photo.show',['id'=>$photo->id]) }}" ><img src="{{ secure_asset('storage/img/' . $photo->island_image) }}" alt=""><p class="explanation">{{ $photo->text }}</p></a>
             </div>
         @endforeach
     @endisset
