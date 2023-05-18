@@ -9,7 +9,6 @@
     <div class="username">
         <p>{{ $user_name }}</p>
     </div>
-    
     <div>{{ $photo->island_name }}</div>
     <div>{{ $photo->genre }}</div>
     <br>
@@ -25,7 +24,7 @@
         <p class="txt_size">{{ $photo->text }}</p>
     </div>
     <div>
-        <a href="{{ route('photo.delete', ['id' => $photo->id]) }}">削除</a>
+        <a href="{{ route('photo.delete',['id' => $photo->id]) }}">削除</a>
     </div>
 </div>
 @endsection

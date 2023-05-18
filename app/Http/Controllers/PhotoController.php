@@ -64,8 +64,10 @@ class PhotoController extends Controller
         if (empty($photo)) {
             abort(404);
         }
-        
-        return view('mypage.detail',['photo'=>$photo]);
+        $id = $photo->id;
+        $user_name = $user->name;
+
+        return view('mypage.detail',['user_name'=>$user_name,'photo'=>$photo]);
     }
 
     
