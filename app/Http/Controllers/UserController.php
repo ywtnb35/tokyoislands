@@ -22,16 +22,3 @@ class UserController extends Controller
         }
     }
 }  
-    // public function detail(Request $request)
-    // { 
-    //     $user = $request->user();
-    //     $user_id = $user->id;
-    //     $photo = Photo::where('user_id',$user_id)->get();
-    //     $user_name = $user->name;
-        
-    //     // $photo = Photo::find($request->id);
-    //     // $user_name = $request->user()->name;
-        
-    //     return view('mypage/mypagedetail',['photo'=>$photo,'user_name'=>$user_name]);
-    // }
-
