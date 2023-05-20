@@ -18,7 +18,8 @@ class UserController extends Controller
             $user_name = $request->name;
             return view('mypage/mypage', ['photos' => $photos, 'user_id' => $user_id,'user_name' => $user_name]);
         } else {
-            return redirect('island.top');
+            $user_name = $request->name;
+            return redirect()->route('mypage');
         }
     }
 }  

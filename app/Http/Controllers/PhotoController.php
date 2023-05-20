@@ -65,15 +65,18 @@ class PhotoController extends Controller
             abort(404);
         }
         $id = $photo->id;
-        $user_name = $user->name;
+        $user_name = $photo->name;
 
-        return view('mypage.detail',['user_name'=>$user_name,'photo'=>$photo]);
+        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo]);
     }
 
     
     public function delete(Request $request)
     {
         $photo = Photo::find($request -> id);
+        if (empty($photo)) {
+            abort(404);
+        }
         $photo->delete();
         
         return redirect()->route('mypage');

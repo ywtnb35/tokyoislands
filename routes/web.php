@@ -29,7 +29,7 @@ Route::controller(IslandController::class)->group(function(){
 
 use App\Http\Controllers\UserController;
 Route::controller(UserController::class)->group(function(){
-    Route::get('/mypage/mypage','index')->name('mypage');
+    Route::get('/mypage','index')->name('mypage');
 });
 
 use App\Http\Controllers\PhotoController;
@@ -40,6 +40,7 @@ Route::controller(PhotoController::class)->prefix('island')->group(function(){
     Route::get('photo/show','show')->name('photo.show');
     Route::get('mypage/detail','detail')->name('mypage.detail')->middleware('auth');
     Route::get('photo/delete', 'delete')->name('photo.delete');
+    Route::post('photo/delete','delete')->name('photo.delete');
 });
 
 

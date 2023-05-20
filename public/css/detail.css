@@ -1,34 +1,33 @@
 #detail {
-    width:980px;
-    margin:0 auto;
-    text-align:center;
+  width: 980px;
+  margin: 0 auto;
+  text-align: center;
 }
-
 
 .username {
-    width:350px;
-    height:10px;
-    color:#DCDCDC;
-    margin:30px auto;
-    text-decoration:none;
+  width: 350px;
+  height: 10px;
+  color: #DCDCDC;
+  margin: 30px auto;
+  text-decoration: none;
 }
 
-.data_container{
-    text-align:center;
+.data_container {
+  text-align: center;
 }
 
-.img-detail{
-  margin-top:30px;
+.img-detail {
+  margin-top: 30px;
   grid-template-columns: repeat(2, 1fr);
   display: grid;
   gap: 27px;
-  text-align:center;
+  text-align: center;
 }
 
 .text {
-    font-size:20px;
+  font-size: 20px;
 }
 
 .txt_size {
-    font-size:25px;
+  font-size: 25px;
 }

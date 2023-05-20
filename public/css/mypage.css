@@ -1,29 +1,30 @@
-.page{
-    width:980px;
-    margin:0 auto;
+.page {
+  width: 980px;
+  margin: 0 auto;
 }
 
-.text_username p{
-    color:#c0c0c0;
-    text-align:center;
-    size:50px;
+.text_username p {
+  color: #c0c0c0;
+  text-align: center;
+  size: 50px;
+  text-decoration: none;
 }
 
-.photolist{
-    align-items:center;
-    justify-content:center;
-    grid-template-columns: repeat(2, 1fr);
-    display:grid;
-    gap: 25px;
-    margin-bottom:60px;
+.photolist {
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  gap: 25px;
+  margin-bottom: 60px;
 }
 
 .photo-item {
-    position: relative;
+  position: relative;
 }
 
 .explanation {
-    position: absolute;
-    bottom: -50px;
-    text-align:center;
+  position: absolute;
+  bottom: -50px;
+  text-align: center;
 }
