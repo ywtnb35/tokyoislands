@@ -79,6 +79,6 @@ class PhotoController extends Controller
         }
         $photo->delete();
         
-        return redirect()->route('mypage');
+        return redirect()->route('island.top', ['name' => $photo->island_name]);
     }
 }
