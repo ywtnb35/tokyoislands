@@ -38,7 +38,7 @@
             <ul class="nav_list">
                 <li class="nav_item"><a href="{{ url('/top') }}">伊豆諸島一覧</a></li>
                 <li class="nav_item"><a href="{{ url('/island/photo/create') }}">新規作成</a></li>
-                <li class="nav_item"><a href="{{ url('/mypage/mypage') }}">マイページ</a></li>
+                <li class="nav_item"><a href="{{ url('/mypage') }}">マイページ</a></li>
                 <li class="nav_item"><a href="{{ url('/top') }}">ログアウト</a></li>
             </ul>
             </nav>
