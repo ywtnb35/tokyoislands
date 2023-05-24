@@ -18,8 +18,9 @@ class UserController extends Controller
             $user_name = $request->name;
             return view('mypage/mypage', ['photos' => $photos, 'user_id' => $user_id,'user_name' => $user_name]);
         } else {
-            $user_name = $request->name;
-            return view('mypage/mypage',['user_name' => $user_name]);
+            $photos = Photo::where('user_id', Auth::id())->get();
+            $user_name = Auth::user()->name;
+            return view('mypage/mypage',['photos' => $photos,'user_name' => $user_name]);
         }
     }
 }  
