@@ -48,6 +48,10 @@
                             <a href="island/top?name=青ヶ島" class="island-link"><img src=" {{ asset('storage/青ヶ島.jpg') }}" alt="aogashima"></a>
                         </div>
                     </div>
+                    <form action="{{ route('logout') }}" method="post">
+                      @csrf
+                      <input type="submit" value="ログアウト">
+                    </form>
                 </div>
             </section>
         </div>

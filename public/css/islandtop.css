@@ -77,13 +77,22 @@
   clear: both;
 }
 
-.photo-item {
-  align-items: center;
-  justify-content: center;
+.island-detail{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
   grid-template-columns: repeat(2, 1fr);
   display: grid;
   gap: 25px;
   margin-bottom: 60px;
+}
+
+.photo-item img{
+  width:600px;
+  height:422px;
+  -o-object-fit: cover;
 }
 
 .explanation {
