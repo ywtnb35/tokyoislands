@@ -12,6 +12,11 @@
   text-decoration: none;
 }
 
+.username h2 a{
+  text-decoration: none;
+  color:#4682b4;
+}
+
 .data_container {
   text-align: center;
 }
