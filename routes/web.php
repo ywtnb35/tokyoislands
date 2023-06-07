@@ -43,7 +43,11 @@ Route::controller(PhotoController::class)->prefix('island')->group(function(){
     Route::post('photo/delete','delete')->name('photo.delete');
 });
 
-
 Auth::routes();
+
+use App\Http\Controllers\Auth\LoginController;
+Route::controller(LoginController::class)->group(function(){
+    Route::post('/logout','logout')->name('logout');
+});
 
 

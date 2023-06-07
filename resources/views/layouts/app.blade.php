@@ -39,7 +39,10 @@
                 <li class="nav_item"><a href="{{ url('/top') }}">伊豆諸島一覧</a></li>
                 <li class="nav_item"><a href="{{ url('/island/photo/create') }}">新規作成</a></li>
                 <li class="nav_item"><a href="{{ route('mypage.index') }}">マイページ</a></li>
-                <li class="nav_item"><a href="{{ url('/top') }}">ログアウト</a></li>
+                <li class="nav_item"><form action="{{ route('logout') }}" method="post">
+                      @csrf
+                      <input type="submit" value="ログアウト">
+                </li>
             </ul>
             </nav>
         </div>
