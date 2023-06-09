@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -38,6 +39,19 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    
+    public function login(Request $request)
+    {
+        $user_id = $request->id;
+        $user = User::where('id',$user_id)->first();
+        
+        if($user!==null){
+            Auth::login($user);
+            return redirect('/top');
+        }else{
+        return redirect('/register');
+        }
     }
     
     public function logout(Request $request)

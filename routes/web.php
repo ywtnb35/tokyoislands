@@ -38,7 +38,7 @@ Route::controller(PhotoController::class)->prefix('island')->group(function(){
     Route::get('photo/create','add')->name('photo.add')->middleware('auth');
     Route::post('photo/create','create')->name('photo.create')->middleware('auth');
     Route::get('photo/show','show')->name('photo.show');
-    Route::get('mypage/detail','detail')->name('mypage.detail')->middleware('auth');
+    Route::get('mypage/detail','detail')->name('mypage.detail');
     Route::get('photo/delete', 'delete')->name('photo.delete');
     Route::post('photo/delete','delete')->name('photo.delete');
 });
@@ -47,6 +47,7 @@ Auth::routes();
 
 use App\Http\Controllers\Auth\LoginController;
 Route::controller(LoginController::class)->group(function(){
+    Route::post('login','login')->name('login');
     Route::post('/logout','logout')->name('logout');
 });
 
