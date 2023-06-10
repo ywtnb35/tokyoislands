@@ -39,8 +39,7 @@
                 <li class="nav_item"><a href="{{ url('/top') }}">伊豆諸島一覧</a></li>
                 @guest
                 <li class="nav_item"><a href="{{ route('login') }}">ログイン</a></li>
-                @endguest
-                @auth
+                @else
                 <li class="nav_item"><a href="{{ url('/island/photo/create') }}">新規作成</a></li>
                 <li class="nav_item"><a href="{{ route('mypage.index') }}">マイページ</a></li>
                 <li class="nav_item">
@@ -49,7 +48,7 @@
                       <input type="submit" value="ログアウト">
                     </form>
                 </li>
-                @endauth
+                @endguest
             </ul>
             </nav>
         </div>

@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/top';
 
     /**
      * Create a new controller instance.
@@ -41,18 +41,6 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     
-    public function login(Request $request)
-    {
-        $user_id = $request->id;
-        $user = User::where('id',$user_id)->first();
-        
-        if($user!==null){
-            Auth::login($user);
-            return redirect('/top');
-        }else{
-        return redirect('/register');
-        }
-    }
     
     public function logout(Request $request)
     {
