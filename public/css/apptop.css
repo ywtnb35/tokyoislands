@@ -90,6 +90,7 @@
   text-decoration: none;
 }
 
+
 #drawer_input:checked ~ .nav_content {
   bottom: 0;/* メニューを画面に入れる */
   
