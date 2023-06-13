@@ -42,7 +42,7 @@ class PhotoController extends Controller
         return redirect()->route('island.top', ['name' => $photo->island_name]);
     }
     
-    //写真を表示
+    //写真を表示（島個別ページ）
     public function index(Request $request,$id)
     {
         $photos = Photo::where('island_name',$id)->get();
@@ -50,6 +50,7 @@ class PhotoController extends Controller
         return view('island.top', ['photos'=>$photos]);  //island/topに写真を表示する
     }
     
+    //写真詳細ページ
     public function show(Request $request)
     {
         $photo = Photo::find($request->id);
@@ -58,7 +59,8 @@ class PhotoController extends Controller
         }
         return view('island.photo.detail',['photo'=>$photo]);
     }
-     
+    
+    //マイページの写真詳細ページ
     public function detail(Request $request)
     { 
         $photo = Photo::find($request->id);
@@ -71,7 +73,7 @@ class PhotoController extends Controller
         return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo]);
     }
 
-    
+    //削除
     public function delete(Request $request)
     {
         $photo = Photo::find($request -> id);
