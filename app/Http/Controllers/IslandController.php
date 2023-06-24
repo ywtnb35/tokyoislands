@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Photo;
+use App\Models\Island;
 use Intervention\Image\Facades\Image;
 
 class IslandController extends Controller
@@ -24,6 +25,12 @@ class IslandController extends Controller
         return view('island.top', ['island_name'=> $island_name, 'island_img'=> $island_img, 'photos'=> $photos]);
         }
     
+    public function show(Request $request)
+    {
+        $official = Island::where('island_name',$island_name)->first();
+        
+        return view('island.top',['official'=>$official]);
+    }
 }
     
 

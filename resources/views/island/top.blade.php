@@ -17,16 +17,8 @@
     
         <div class="col-md-8 mx-auto">
             <div class="island_link">
-                <a href="http://www.izu-oshima.or.jp/" class="button">公式サイトはこちら</a>
-                <a href="https://www.toshimamura.org/" alt="toshima"></a>
-                <a href="https://niijima-info.jp/" alt="niijima"></a>
-                <a href="https://shikinejima.tokyo/" alt="shikinejima"></a>
-                <a href="https://kozushima.com/" alt="kozu"></a>
-                <a href="https://www.miyakejima.gr.jp/#" alt="miyake"></a>
-                <a href="https://mikura-isle.com/" alt="mikura"></a>
-                <a href="https://www.hachijo.gr.jp/" alt="hachijo"></a>
-                <a href="https://www.vill.aogashima.tokyo.jp/top.html" alt="aogashima"></a>
-               </div>
+                <a href="{{ $official->official_site }}" alt="{{ $official->island_name }}" class="button">公式サイトはこちら</a>
+            </div>
         </div>
         
         <br>
