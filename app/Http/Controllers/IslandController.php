@@ -16,20 +16,15 @@ class IslandController extends Controller
         $genre = $request->genre;
         $island_img = $request->name . ".jpg";
         
+        $island = Island::where('island_name',$island_name)->get();
+        
         if($genre == null){
             $photos = Photo::where("island_name", $island_name)->get(); // island_nameすべての写真をget
         }else{
             $photos = Photo::where("island_name", $island_name)->where("genre",$genre)->get(); // nullでなければgenreの写真をget
         }
         
-        return view('island.top', ['island_name'=> $island_name, 'island_img'=> $island_img, 'photos'=> $photos]);
-        }
-    
-    public function show(Request $request)
-    {
-        $official = Island::where('island_name',$island_name)->first();
-        
-        return view('island.top',['official'=>$official]);
+        return view('island.top', ['island_name'=> $island_name, 'island_img'=> $island_img, 'photos'=> $photos,'island'=>$island]);
     }
 }
     

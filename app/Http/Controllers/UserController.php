@@ -15,11 +15,15 @@ class UserController extends Controller
         $user_id = $request->id;
         if ($user_id) {
             $photos = Photo::where('user_id', $user_id)->get();
-            $user_name = $request->name;
+            $user_name = $request->user_name;
             return view('mypage/mypage', ['photos' => $photos, 'user_id' => $user_id,'user_name' => $user_name]);
         } else {
             $photos = Photo::where('user_id', Auth::id())->get();
-            $user_name = Auth::user()->name;
+            $user_name = Auth::user() ? AUth::user()->name : null;
+            
+            if(Auth::user() === null){
+                return view('auth.login');
+            }
             return view('mypage/mypage',['photos' => $photos,'user_name' => $user_name]);
         }
     }

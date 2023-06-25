@@ -17,7 +17,7 @@
     
         <div class="col-md-8 mx-auto">
             <div class="island_link">
-                <a href="{{ $official->official_site }}" alt="{{ $official->island_name }}" class="button">公式サイトはこちら</a>
+                <a href="{{ $island->official_site}}" alt="{{ $official->island_name }}" class="button">公式サイトはこちら</a>
             </div>
         </div>
         

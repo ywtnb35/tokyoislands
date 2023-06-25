@@ -25,7 +25,6 @@ Route::controller(TopController::class)->group(function(){
 use App\Http\Controllers\IslandController;
 Route::controller(IslandController::class)->group(function(){
     Route::get('/island/top','index')->name('island.top');
-    Route::get('island/top','show')->name('island.show');
 });
 
 use App\Http\Controllers\UserController;
