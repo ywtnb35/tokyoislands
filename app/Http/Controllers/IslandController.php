@@ -16,7 +16,7 @@ class IslandController extends Controller
         $genre = $request->genre;
         $island_img = $request->name . ".jpg";
         
-        $island = Island::where('island_name',$island_name)->get();
+        $island = Island::where('island_name',$island_name)->first();
         
         if($genre == null){
             $photos = Photo::where("island_name", $island_name)->get(); // island_nameすべての写真をget
