@@ -21,6 +21,10 @@ return new class extends Migration
             $table->timestamps();
         });
         
+        if (Schema::hasColumn('islands', 'island_name') && Schema::hasColumn('islands', 'official_site')) {
+            
+        }
+        
             Island::create(['island_name'=>'大島','official_site' => 'http://www.izu-oshima.or.jp/']);
             Island::create(['island_name'=>'利島','official_site' => 'https://www.toshimamura.org/']);
             Island::create(['island_name'=>'新島','official_site'=> 'https://niijima-info.jp/']);
