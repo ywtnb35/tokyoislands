@@ -3,6 +3,7 @@
 .islands-list {
   width: 100%;
   margin: 0 auto;
+  padding-bottom:150px;
 }
 
 h2 {
@@ -55,8 +56,11 @@ section {
   width: auto;
 }
 
+
+
 @media (max-width: 468px) {
   .island-container {
     grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
   }
 }
