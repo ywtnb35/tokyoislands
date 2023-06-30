@@ -8,7 +8,7 @@
     <div class="main">
         <div class="container">
             <div class="col-img">
-                <p>{{ $island_name }}</p>
+                <p>{{ $island->island_name }}</p>
                 <img src="{{ asset('storage/' . $island_img) }}">
             </div>
         </div>
@@ -17,7 +17,7 @@
     
         <div class="col-md-8 mx-auto">
             <div class="island_link">
-                <a href="{{ $island->official_site}}" alt="{{ $island->island_name }}" class="button">公式サイトはこちら</a>
+                <a href="{{ $island->official_site}}" alt="{{ $island->island_name }}" class="button" target="_blank" rel="noopener noreferrer">公式サイトはこちら</a>
             </div>
         </div>
         
@@ -25,9 +25,9 @@
         <br>
         
         <div class="genre_btn">
-            <a href="/island/top?name={{ $island_name }}&genre=風景" class="genre_btn_l">風景</a>
-            <a href="/island/top?name={{ $island_name }}&genre=食べ物" class="genre_btn_l">食べ物</a>
-            <a href="/island/top?name={{ $island_name }}&genre=動植物" class="genre_btn_l">動植物</a>
+            <a href="/island/top?name={{ $island->island_name }}&genre=風景" class="genre_btn_l">風景</a>
+            <a href="/island/top?name={{ $island->island_name }}&genre=食べ物" class="genre_btn_l">食べ物</a>
+            <a href="/island/top?name={{ $island->island_name }}&genre=動植物" class="genre_btn_l">動植物</a>
 
         </div>
         

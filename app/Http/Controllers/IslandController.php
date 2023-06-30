@@ -24,7 +24,7 @@ class IslandController extends Controller
             $photos = Photo::where("island_name", $island_name)->where("genre",$genre)->get(); // nullでなければgenreの写真をget
         }
         
-        return view('island.top', ['island_name'=> $island_name, 'island_img'=> $island_img, 'photos'=> $photos,'island'=>$island]);
+        return view('island.top', ['island_img'=> $island_img, 'photos'=> $photos,'island'=>$island]);
     }
 }
     

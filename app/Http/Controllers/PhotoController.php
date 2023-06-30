@@ -20,7 +20,8 @@ class PhotoController extends Controller
     // 写真投稿
     public function create(Request $request)
     {
-            
+        $this->validate($request, Photo::$rules);
+        
         $photo = new Photo;
         
         $user = Auth::user(); // ログインユーザーを取得

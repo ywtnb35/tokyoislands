@@ -9,8 +9,8 @@
     <div class="username">
         <p>{{ $user_name }}</p>
     </div>
-    <div>{{ $photo->island_name }}</div>
-    <div>{{ $photo->genre }}</div>
+    <div>島名：{{ $photo->island_name }}</div>
+    <div>ジャンル：{{ $photo->genre }}</div>
     <br>
     
     <div class="img_container">

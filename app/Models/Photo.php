@@ -18,6 +18,11 @@ class Photo extends Model
         'text'
     ];
     
+    public static $rules = array(
+        'text' => 'required|max:255',
+        'img'=>'required'
+    );
+    
     public function user()
     {
         return $this->belongsTo('App\Models\User');
