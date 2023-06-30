@@ -28,3 +28,10 @@
   bottom: -50px;
   text-align: center;
 }
+
+@media (max-width: 468px) {
+  .photolist {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
