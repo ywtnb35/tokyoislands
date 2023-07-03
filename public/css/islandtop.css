@@ -90,8 +90,8 @@
 }
 
 .photo-item img{
-  width:600px;
-  height:422px;
+  width:100%;
+  height:auto;
   -o-object-fit: cover;
 }
 
@@ -101,7 +101,7 @@
 }
 
 @media (max-width: 768px) {
-  .island-detail {
+  .island-detail .page {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
   }
