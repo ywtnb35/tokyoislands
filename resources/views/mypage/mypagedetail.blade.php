@@ -21,7 +21,7 @@
     <br>
     <div class="text">
         <label>＜コメント＞</label>
-        <p class="txt_size">{{ $photo->text }}</p>
+        <p class="txt_size"  style="white-space:pre-wrap;">{{ $photo->text }}</p>
     </div>
     <div>
         <a href="{{ route('photo.delete',['id' => $photo->id]) }}">削除</a>
