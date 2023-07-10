@@ -95,13 +95,9 @@
   -o-object-fit: cover;
 }
 
-.explanation {
-  text-align: center;
-  font-size: 15px;
-}
 
 @media (max-width: 768px) {
-  .island-detail .page {
+  .island-detail {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
   }
