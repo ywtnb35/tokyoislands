@@ -22,6 +22,7 @@
     <link href="{{ secure_asset('css/detail.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/mypage.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/create.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/search.css') }}" rel="stylesheet">
 </head>
 <body>
     <a href="/top">
@@ -40,6 +41,7 @@
                 @guest
                 <li class="nav_item"><a href="{{ route('login') }}">ログイン</a></li>
                 @else
+                <li class="nav_item"><a href="{{ url('/island/photo/search') }}">画像検索</a></li>
                 <li class="nav_item"><a href="{{ url('/island/photo/create') }}">新規作成</a></li>
                 <li class="nav_item"><a href="{{ route('mypage.index') }}">マイページ</a></li>
                 <li class="nav_item">

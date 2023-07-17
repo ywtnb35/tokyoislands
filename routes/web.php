@@ -41,6 +41,8 @@ Route::controller(PhotoController::class)->prefix('island')->group(function(){
     Route::get('mypage/detail','detail')->name('mypage.detail');
     Route::get('photo/delete', 'delete')->name('photo.delete');
     Route::post('photo/delete','delete')->name('photo.delete');
+    Route::get('photo/search','search')->name('photo.search');
+    Route::post('photo/search','search')->name('photo.search');
 });
 
 Auth::routes();

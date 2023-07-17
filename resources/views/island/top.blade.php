@@ -4,6 +4,7 @@
 @section('title', '島個別ページ')
 
 @section('content')
+
 <body>
     <div class="main">
         <div class="container">

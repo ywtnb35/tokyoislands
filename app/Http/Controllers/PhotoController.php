@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Photo;
+use App\Models\Island;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -72,6 +73,18 @@ class PhotoController extends Controller
         $user_name = $photo->name;
 
         return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo]);
+    }
+    
+    //検索
+    public function search(Request $request)
+    {
+        $island_name = $request->input('island_name');
+        $genre = $request->input('genre');
+        $island = Island::where('island_name',$island_name)->first();
+        
+        
+        $photos = Photo::where("island_name", $island_name)->where("genre",$genre)->get();
+        return view('island.top', ['island_name'=>$island_name,'photos'=> $photos,'island'=>$island]);
     }
 
     //削除
