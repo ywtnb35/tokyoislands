@@ -84,7 +84,7 @@ class PhotoController extends Controller
         
         
         $photos = Photo::where("island_name", $island_name)->where("genre",$genre)->get();
-        return view('island.top', ['island_name'=>$island_name,'photos'=> $photos,'island'=>$island]);
+        return view('island.top', ['island_name'=>$island_name,'genre'=>$genre,'photos'=> $photos,'island'=>$island]);
     }
 
     //削除
