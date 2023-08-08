@@ -10,7 +10,7 @@
         <div class="container">
             <div class="col-img">
                 <p>{{ $island->island_name }}</p>
-                <img src="{{ asset('storage/' . $island_img) }}">
+                <img src="{{ asset('storage/' . $island->island_img) }}">
             </div>
         </div>
     

@@ -13,7 +13,7 @@
              <div class="shima_name">
                 <label>島</label>
                 <br>
-                <select name="islands_name"> 
+                <select name="island_name"> 
                 <option value="大島">大島</option>
                 <option value="利島">利島</option>
                 <option value="新島">新島</option>
@@ -42,5 +42,6 @@
       <button type="submit">検索</button>
       
 </div>
+    
 
 @endsection

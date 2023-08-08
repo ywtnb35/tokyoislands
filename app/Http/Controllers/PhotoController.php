@@ -75,6 +75,10 @@ class PhotoController extends Controller
         return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo]);
     }
     
+    public function showSearch(Request $request){
+        return view('island.photo.search');
+    }
+    
     //検索
     public function search(Request $request)
     {
@@ -82,10 +86,14 @@ class PhotoController extends Controller
         $genre = $request->input('genre');
         $island = Island::where('island_name',$island_name)->first();
         
+        if(empty($island)){
+            abort(404);
+        }
         
-        $photos = Photo::where("island_name", $island_name)->where("genre",$genre)->get();
+        $photos = Photo::where('island_name', $island_name)->where('genre',$genre)->get();
         return view('island.top', ['island_name'=>$island_name,'genre'=>$genre,'photos'=> $photos,'island'=>$island]);
     }
+    
 
     //削除
     public function delete(Request $request)
