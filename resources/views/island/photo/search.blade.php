@@ -13,7 +13,8 @@
              <div class="shima_name">
                 <label>島</label>
                 <br>
-                <select name="island_name"> 
+                <select name="island_name">
+                <option value="">すべての島</option>
                 <option value="大島">大島</option>
                 <option value="利島">利島</option>
                 <option value="新島">新島</option>
@@ -30,6 +31,7 @@
         <label>ジャンル</label>
         <br>
           <select name="genre">
+            <option value="">すべてのジャンル</option>
             <option value="風景">風景</option>
             <option value="食べ物">食べ物</option>
             <option value="動植物">動植物</option>
