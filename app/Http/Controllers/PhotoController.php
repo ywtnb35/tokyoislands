@@ -87,6 +87,14 @@ class PhotoController extends Controller
         $genre = $request->input('genre');
         $island = Island::where('island_name',$island_name)->first();
         
+        if(!empty($island_name)){
+            $query->where('island_name',$island_name);
+        }
+        
+        if(!empty($genre)){
+            $query->where('genre',$genre);
+        }
+        
         $photos = Photo::where('island_name', $island_name)->where('genre',$genre)->get();
         return view('island.top', ['island_name'=>$island_name,'genre'=>$genre,'photos'=> $photos,'island'=>$island]);
     }
