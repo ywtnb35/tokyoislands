@@ -59,7 +59,8 @@ class PhotoController extends Controller
         if (empty($photo)) {
             abort(404);
         }
-        return view('island.photo.detail',['photo'=>$photo]);
+        $user_name = $photo->user_name;
+        return view('island.photo.detail',['photo'=>$photo,'user_name'=>$user_name]);
     }
     
     //マイページの写真詳細ページ
@@ -70,7 +71,7 @@ class PhotoController extends Controller
             abort(404);
         }
         $id = $photo->id;
-        $user_name = $photo->name;
+        $user_name = $photo->user_name;
 
         return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo]);
     }
@@ -85,19 +86,44 @@ class PhotoController extends Controller
     {
         $island_name = $request->input('island_name');
         $genre = $request->input('genre');
-        $island = Island::where('island_name',$island_name)->first();
         
-        if(!empty($island_name)){
-            $query->where('island_name',$island_name);
+        $island_name = ($island_name) ? $island_name : 'すべての島';
+        
+        $genre = ($genre) ? $genre : 'すべてのジャンル';
+        
+        if ($island_name === 'すべての島' && $genre === 'すべてのジャンル') {
+            $photos = Photo::all();
+        } elseif ($island_name === 'すべての島') {
+            $photos = Photo::where('genre', $genre)->get();
+        } elseif ($genre === 'すべてのジャンル') {
+            $photos = Photo::where('island_name', $island_name)->get();
+        } else {
+            $photos = Photo::where('island_name', $island_name)->where('genre', $genre)->get();
         }
         
-        if(!empty($genre)){
-            $query->where('genre',$genre);
-        }
+        $island = Island::where('island_name', $island_name)->first();
         
-        $photos = Photo::where('island_name', $island_name)->where('genre',$genre)->get();
-        return view('island.top', ['island_name'=>$island_name,'genre'=>$genre,'photos'=> $photos,'island'=>$island]);
+        return view('island.top', ['island_name' => $island_name, 'genre' => $genre, 'photos' => $photos, 'island' => $island]);
     }
+
+    
+    // public function search(Request $request)
+    // {
+    //     $island_name = $request->input('island_name');
+    //     $genre = $request->input('genre');
+    //     $island = Island::where('island_name',$island_name)->first();
+        
+
+    //   if (!empty($island_name)) {
+    //     $island = Island::where('island_name', $island_name)->first();
+    //   } else {
+    //     $island = null;
+    //   }
+
+        
+    //     $photos = Photo::where('island_name', $island_name)->where('genre',$genre)->get();
+    //     return view('island.top', ['island_name'=>$island_name,'genre'=>$genre,'photos'=> $photos,'island'=>$island]);
+    // }
     
 
     //削除
