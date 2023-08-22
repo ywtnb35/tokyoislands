@@ -87,44 +87,20 @@ class PhotoController extends Controller
         $island_name = $request->input('island_name');
         $genre = $request->input('genre');
         
-        $island_name = ($island_name) ? $island_name : 'すべての島';
         
-        $genre = ($genre) ? $genre : 'すべてのジャンル';
-        
-        if ($island_name === 'すべての島' && $genre === 'すべてのジャンル') {
-            $photos = Photo::all();
-        } elseif ($island_name === 'すべての島') {
-            $photos = Photo::where('genre', $genre)->get();
-        } elseif ($genre === 'すべてのジャンル') {
-            $photos = Photo::where('island_name', $island_name)->get();
-        } else {
-            $photos = Photo::where('island_name', $island_name)->where('genre', $genre)->get();
+        if($island_name === 'すべての島'){
+            $photos = Photo::where('genre',$genre)->get();
+        }else if ($genre ==='すべてのジャンル'){
+            $photos = Photo::where('island_name',$island_name)->get();
+        }else{
+            $photos = Photo::where("island_name", $island_name)->where("genre",$genre)->get();
         }
         
-        $island = Island::where('island_name', $island_name)->first();
         
+        $island = Island::where('island_name',$island_name)->first();
         return view('island.top', ['island_name' => $island_name, 'genre' => $genre, 'photos' => $photos, 'island' => $island]);
     }
 
-    
-    // public function search(Request $request)
-    // {
-    //     $island_name = $request->input('island_name');
-    //     $genre = $request->input('genre');
-    //     $island = Island::where('island_name',$island_name)->first();
-        
-
-    //   if (!empty($island_name)) {
-    //     $island = Island::where('island_name', $island_name)->first();
-    //   } else {
-    //     $island = null;
-    //   }
-
-        
-    //     $photos = Photo::where('island_name', $island_name)->where('genre',$genre)->get();
-    //     return view('island.top', ['island_name'=>$island_name,'genre'=>$genre,'photos'=> $photos,'island'=>$island]);
-    // }
-    
 
     //削除
     public function delete(Request $request)
