@@ -87,13 +87,14 @@ class PhotoController extends Controller
         $island_name = $request->input('island_name');
         $genre = $request->input('genre');
         
-        
-        if($island_name === 'すべての島'){
+        if($island_name == 'すべての島' && $genre != 'すべてのジャンル'){
             $photos = Photo::where('genre',$genre)->get();
-        }else if ($genre ==='すべてのジャンル'){
+        }else if ($island_name != 'すべての島' && $genre == 'すべてのジャンル'){
             $photos = Photo::where('island_name',$island_name)->get();
-        }else{
+        }else if($island_name != 'すべての島' && $genre != 'すべてのジャンル'){
             $photos = Photo::where("island_name", $island_name)->where("genre",$genre)->get();
+        }else{
+            $photos = Photo::get();
         }
         
         

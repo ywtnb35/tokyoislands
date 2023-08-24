@@ -19,9 +19,9 @@ class IslandController extends Controller
         $island = Island::where('island_name',$island_name)->first();
         
         if($genre == null){
-            $photos = Photo::where("island_name", $island_name)->get(); // island_nameすべての写真をget
+            $photos = Photo::where('island_name', $island_name)->get(); // island_nameすべての写真をget
         }else{
-            $photos = Photo::where("island_name", $island_name)->where("genre",$genre)->get(); // nullでなければgenreの写真をget
+            $photos = Photo::where('island_name', $island_name)->where('genre',$genre)->get(); // nullでなければgenreの写真をget
         }
         
         return view('island.top', ['island_img'=> $island_img, 'photos'=> $photos,'island'=>$island]);

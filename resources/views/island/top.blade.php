@@ -11,7 +11,12 @@
             @if($island)
             <div class="col-img">
                 <p>{{ $island->island_name }}</p>
-                <img src="{{ asset('storage/' . $island->island_img) }}">
+                <img src="{{ asset('storage/' . $island->island_name . '.jpg') }}">
+            </div>
+            @else
+            <div class="col-img">
+                <p>すべての島</p>
+                <img src="{{ asset('storage/すべての島.jpg') }}">
             </div>
             @endif
         </div>
