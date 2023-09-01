@@ -7,8 +7,9 @@
 
 <div class="page">
     <div class="text_username">
-        <p>{{ $user_name }}</p>
+        <p><a href="{{ route('mypage.change',['user_id'=>$user]) }}">{{ $user_name }}</a></p>
         <br>
+        
     </div>
  
     <hr>

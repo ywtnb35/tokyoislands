@@ -28,8 +28,11 @@ Route::controller(IslandController::class)->group(function(){
 });
 
 use App\Http\Controllers\UserController;
-Route::controller(UserController::class)->group(function(){
+Route::controller(UserController::class)->prefix('mypage')->group(function(){
     Route::get('/mypage','index')->name('mypage.index');
+    Route::get('/changeImg','change')->name('mypage.change');
+    Route::post('changeImg','upload')->name('mypage.upload');
+    Route::get('/deleteImg','delete')->name('mypage.delete');
 });
 
 use App\Http\Controllers\PhotoController;

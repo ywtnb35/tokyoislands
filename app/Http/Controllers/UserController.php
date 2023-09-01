@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Photo;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -20,11 +21,35 @@ class UserController extends Controller
         } else {
             $photos = Photo::where('user_id', Auth::id())->get();
             $user_name = Auth::user() ? Auth::user()->name : null;
-            
+            $user_id = Auth::id();
             if(Auth::user() === null){
                 return view('auth.login');
             }
-            return view('mypage/mypage',['photos' => $photos,'user_name' => $user_name]);
+            return view('mypage/mypage',['photos' => $photos,'user_name' => $user_name,'user'=>$user_id]);
         }
+    }
+    
+    //プロフィール画像の変更画面を表示
+    public function change(Request $request)
+    {
+        $user_id = $request->user_id;
+        $user = User::find($user_id);
+        
+        return view('mypage.change',['user'=>$user]);
+    }
+    
+    //プロフィール写真を変更
+    public function upload(Request $request)
+    {
+         $user = Auth::user(); 
+    
+        if ($request->hasFile('profile_img')) { 
+            $path = $request->file('profile_img')->store('public/img');
+            $user->profile_img = basename($path);
+                
+            $user->save(); 
+        }
+        
+        return view('mypage/mypage',['user'=>$user,]);
     }
 }  
