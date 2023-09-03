@@ -25,7 +25,7 @@ class UserController extends Controller
             if(Auth::user() === null){
                 return view('auth.login');
             }
-            return view('mypage/mypage',['photos' => $photos,'user_name' => $user_name,'user'=>$user_id]);
+            return view('mypage/mypage',['photos' => $photos,'user'=>$user_id,'user_name' => $user_name,]);
         }
     }
     
@@ -34,8 +34,9 @@ class UserController extends Controller
     {
         $user_id = $request->user_id;
         $user = User::find($user_id);
+        $user_name = Auth::user() ? Auth::user()->name : null;
         
-        return view('mypage.change',['user'=>$user]);
+        return view('mypage.change',['user'=>$user,'user_name'=>$user_name]);
     }
     
     //プロフィール写真を変更
@@ -50,6 +51,6 @@ class UserController extends Controller
             $user->save(); 
         }
         
-        return view('mypage/mypage',['user'=>$user,]);
+        return redirect()->route('mypage.index');
     }
 }  
