@@ -53,4 +53,13 @@ class UserController extends Controller
         
         return redirect()->route('mypage.index');
     }
+    
+    public function delete(Request $request)
+    {
+        $user_id = $request->user_id;
+        
+        return redirect()->route('mypage.index');
+    }
+    
+
 }  
