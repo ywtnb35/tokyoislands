@@ -42,7 +42,7 @@ class UserController extends Controller
     //プロフィール写真を変更
     public function upload(Request $request)
     {
-         $user = Auth::user(); 
+        $user = Auth::user(); 
     
         if ($request->hasFile('profile_img')) { 
             $path = $request->file('profile_img')->store('public/img');
@@ -54,12 +54,19 @@ class UserController extends Controller
         return redirect()->route('mypage.index');
     }
     
+    //プロフィール画像削除
     public function delete(Request $request)
     {
-        $user_id = $request->user_id;
+        $user = Auth::user();
+        if(!$user){
+            abort(404);
+        }
         
-        return redirect()->route('mypage.index');
+        if($user->profile_img){
+            Storage::delete('public/img/'.$user->profile_img);
     }
     
-
-}  
+    return redirect()->route('mypage.index');
+    }
+    
+}

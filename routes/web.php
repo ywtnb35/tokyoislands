@@ -33,6 +33,7 @@ Route::controller(UserController::class)->prefix('mypage')->group(function(){
     Route::get('/changeImg','change')->name('mypage.change');
     Route::post('changeImg','upload')->name('mypage.upload');
     Route::get('/deleteImg','delete')->name('mypage.delete');
+    Route::post('/deleteImg','delete')->name('mypage.delete');
 });
 
 use App\Http\Controllers\PhotoController;
