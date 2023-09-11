@@ -11,12 +11,14 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
+    //ユーザーマイページ表示
     public function index(Request $request)
     {
         $user_id = $request->id;
         if ($user_id) {
             $photos = Photo::where('user_id', $user_id)->get();
-            $user_name = $request->user_name;
+            $user_name = $request->name;
+            
             return view('mypage/mypage', ['photos' => $photos, 'user_id' => $user_id,'user_name' => $user_name]);
         } else {
             $photos = Photo::where('user_id', Auth::id())->get();
@@ -25,14 +27,15 @@ class UserController extends Controller
             if(Auth::user() === null){
                 return view('auth.login');
             }
-            return view('mypage/mypage',['photos' => $photos,'user'=>$user_id,'user_name' => $user_name,]);
+           
+            return view('mypage/mypage',['photos' => $photos,'user_name'=>$user_id,'user_name' => $user_name,]);
         }
     }
     
     //プロフィール画像の変更画面を表示
     public function change(Request $request)
     {
-        $user_id = $request->user_id;
+        $user_id = Auth::id();
         $user = User::find($user_id);
         $user_name = Auth::user() ? Auth::user()->name : null;
         
@@ -47,10 +50,13 @@ class UserController extends Controller
         if ($request->hasFile('profile_img')) { 
             $path = $request->file('profile_img')->store('public/img');
             $user->profile_img = basename($path);
-                
-            $user->save(); 
+        }else{
+            if(!$user->profile_img){
+            $user->profile_img = null;
+            }
         }
         
+        $user->save();
         return redirect()->route('mypage.index');
     }
     
@@ -62,10 +68,12 @@ class UserController extends Controller
             abort(404);
         }
         
-        if($user->profile_img){
+        if($user->profile_img !== 'default.jpeg'){
             Storage::delete('public/img/'.$user->profile_img);
     }
-    
+    $user->profile_img = null;
+    $user->save();
+
     return redirect()->route('mypage.index');
     }
     

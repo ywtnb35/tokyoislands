@@ -15,7 +15,11 @@
     @isset($user)
     <form action="{{ route('mypage.upload') }}" method="post" enctype="multipart/form-data">
         @csrf
-        <img src="{{ asset('storage/img/'.$user->profile_img) }}">
+        @if($user->profile_img == null)
+            <img src="{{ asset('storage/img/default.jpeg') }}">
+        @else
+            <img src="{{ asset('storage/img/'.$user->profile_img) }}">
+        @endif
         
         <input type="file" name="profile_img">
         <br>
