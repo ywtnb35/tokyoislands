@@ -3,8 +3,8 @@
     margin:0 auto;
 }
 
-.profile img{
-    width:150px;
-    height:150px;
+.profile_img img{
+    width:250px;
+    height:250px;
+    border-radius:135px;
 }
-

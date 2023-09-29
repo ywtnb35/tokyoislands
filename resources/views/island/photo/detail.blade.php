@@ -7,7 +7,7 @@
 <div id="detail">
     <div class="username">
         <p>{{ $user_name }}</p>
-        <h2><a href="{{ route('mypage.index', ['id' => $photo->user->id,'name' => $photo->user->name]) }}">{{ $photo->user->name }}</a></h2>
+        <h2><a href="{{ route('mypage.index', ['id' => $photo->user->id,'user_name' => $photo->user->name]) }}">{{ $photo->user->name }}</a></h2>
     </div>
     
     <div>{{ $photo->island_name }}</div>

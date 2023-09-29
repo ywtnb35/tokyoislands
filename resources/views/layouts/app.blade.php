@@ -15,6 +15,7 @@
 
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    <script src="{{ secure_asset('js/profile_img_change.js') }}" defer></script>
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/apptop.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/top.css') }}" rel="stylesheet">

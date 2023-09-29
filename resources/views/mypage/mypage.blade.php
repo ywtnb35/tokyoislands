@@ -6,10 +6,20 @@
 @section('content')
 
 <div class="page">
+    
     <div class="text_username">
+        <div class="profile_img" >
+        @isset($user)
+            @if($user->profile_img == null)
+                <img src="{{ asset('storage/img/default.jpeg') }}">
+            @else
+                <img src="{{ asset('storage/img/'.$user->profile_img) }}">
+            @endif
+        @endisset
+
         <p><a href="{{ route('mypage.change',['user_id'=>$user_id]) }}">{{ $user_name }}</a></p>
         <br>
-        
+        </div>  
     </div>
  
     <hr>

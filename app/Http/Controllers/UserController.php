@@ -15,21 +15,26 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $user_id = $request->id;
-        if ($user_id) {
-            $photos = Photo::where('user_id', $user_id)->get();
-            $user_name = $request->name;
-            
-            return view('mypage/mypage', ['photos' => $photos, 'user_id' => $user_id,'user_name' => $user_name]);
+       
+        if ($user_id){
+            $photos = Photo::where('user_id',$user_id)->get();
+            $user_name = $request->user_name;
+            $user = User::find($user_id);
+            return view('mypage/mypage',['photos'=>$photos,'user_id'=>$user_id,'user_name'=>$user_name,'user'=>$user]);
         } else {
-            $photos = Photo::where('user_id', Auth::id())->get();
-            $user_name = Auth::user() ? Auth::user()->name : null;
             $user_id = Auth::id();
-            if(Auth::user() === null){
-                return view('auth.login');
-            }
-           
-            return view('mypage/mypage',['photos' => $photos,'user_name'=>$user_id,'user_name' => $user_name,]);
+            $user = User::find($user_id);
+            $user_name = Auth::user() ? Auth::user()->name : null;
+            
+                if($user_name === null) {
+                    return view('auth.login');
+                }
+        
+            $photos = Photo::where('user_id',$user_id)->get();
+        
+            return view('mypage/mypage',['photos'=>$photos,'user_id'=>$user_id,'user_name'=>$user_name,'user'=>$user]);
         }
+        
     }
     
     //プロフィール画像の変更画面を表示
