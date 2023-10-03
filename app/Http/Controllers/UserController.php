@@ -41,6 +41,11 @@ class UserController extends Controller
     public function change(Request $request)
     {
         $user_id = Auth::id();
+    
+        if($request->id !== $user_id){
+            abort(404);
+        }
+      
         $user = User::find($user_id);
         $user_name = Auth::user() ? Auth::user()->name : null;
         
@@ -52,7 +57,7 @@ class UserController extends Controller
     {
         $user = Auth::user(); 
     
-        if ($request->hasFile('profile_img')) { 
+        if ($request->hasFil('profile_img')) { 
             $path = $request->file('profile_img')->store('public/img');
             $user->profile_img = basename($path);
         }else{
