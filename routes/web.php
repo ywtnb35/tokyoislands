@@ -30,10 +30,10 @@ Route::controller(IslandController::class)->group(function(){
 use App\Http\Controllers\UserController;
 Route::controller(UserController::class)->prefix('mypage')->group(function(){
     Route::get('/mypage','index')->name('mypage.index');
-    Route::get('/changeImg','change')->name('mypage.change');
-    Route::post('changeImg','upload')->name('mypage.upload');
-    Route::get('/deleteImg','delete')->name('mypage.delete');
-    Route::post('/deleteImg','delete')->name('mypage.delete');
+    Route::get('/changeImg','change')->name('mypage.change')->middleware('auth');
+    Route::post('changeImg','upload')->name('mypage.upload')->middleware('auth');
+    Route::get('/deleteImg','delete')->name('mypage.delete')->middleware('auth');
+    Route::post('/deleteImg','delete')->name('mypage.delete')->middleware('auth');
 });
 
 use App\Http\Controllers\PhotoController;

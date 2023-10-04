@@ -42,14 +42,15 @@ class UserController extends Controller
     {
         $user_id = Auth::id();
     
-        if($request->id !== $user_id){
+        if($user_id != $request->id){
             abort(404);
         }
-      
+    
         $user = User::find($user_id);
         $user_name = Auth::user() ? Auth::user()->name : null;
         
-        return view('mypage.change',['user'=>$user,'user_name'=>$user_name]);
+        return view('mypage.change',['user'=>$user,'user_name'=>$user_name,'user_id'=>$user_id]);
+        
     }
     
     //プロフィール写真を変更

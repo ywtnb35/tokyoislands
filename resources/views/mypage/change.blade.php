@@ -11,6 +11,9 @@
         <br>
         
     </div>
+    <div class="profile_link">
+        <a href="{{ route('mypage.change',['user_id' => Auth::id()]) }}"></a>
+    </div>
     <hr>
     <div class="profile_img">
         @isset($user)
