@@ -42,7 +42,7 @@ class UserController extends Controller
     {
         $user_id = Auth::id();
     
-        if($user_id != $request->input('user_id')){
+        if($user_id != $request->user_id){
             abort(404);
         }
     
