@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Photo;
 use App\Models\Island;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -59,8 +60,11 @@ class PhotoController extends Controller
         if (empty($photo)) {
             abort(404);
         }
+        
+        $user = User::find($photo->user_id);
         $user_name = $photo->user_name;
-        return view('island.photo.detail',['photo'=>$photo,'user_name'=>$user_name]);
+        
+        return view('island.photo.detail',['photo'=>$photo,'user_name'=>$user_name,'user'=>$user]);
     }
     
     //マイページの写真詳細ページ
@@ -70,10 +74,11 @@ class PhotoController extends Controller
         if (empty($photo)) {
             abort(404);
         }
-        $id = $photo->id;
+        // $id = $photo->id;
+        $user = User::find($photo->user_id);
         $user_name = $photo->user_name;
 
-        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo]);
+        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo,'user'=>$user]);
     }
     
     //検索画面表示

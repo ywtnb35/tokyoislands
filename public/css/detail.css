@@ -1,24 +1,79 @@
-#detail {
-  width: 980px;
+.page {
+  width:100%;
+  max-width: 980px;
   margin: 0 auto;
-  text-align: center;
+  padding:0 20px;
+  box-sizing:border-box;
 }
 
-.username {
-  width: 350px;
-  height: 10px;
-  color: #DCDCDC;
-  margin: 30px auto;
+.text_username p {
+  color: #c0c0c0;
+  text-align: center;
+  font-size: 30px;
   text-decoration: none;
 }
 
-.username h2 a{
-  text-decoration: none;
-  color:#4682b4;
+.profile_img img{
+  width:250px;
+  height:250px;
+  border-radius:135px;
 }
 
-.data_container {
-  text-align: center;
+.img_p p, h2{
+  margin-top:10px;
+  margin-bottom:10px;
+  font-size:30px;
+}
+
+
+/*#detail {*/
+/*  width:100%;*/
+/*  max-width: 980px;*/
+/*  margin: 0 auto;*/
+/*  padding:0 20px;*/
+/*  box-sizing:border-box;*/
+/*}*/
+
+/*.img_p p,h2 {*/
+/*  color: #c0c0c0;*/
+/*  text-align: center;*/
+/*  font-size: 30px;*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*.profile_img img{*/
+/*  width:250px;*/
+/*  height:250px;*/
+/*  border-radius:135px;*/
+/*}*/
+
+
+/*.profile_img{*/
+/*  margin-bottom:10px;*/
+/*}*/
+/*.username{*/
+/*  margin-top:10px;*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*.username p {*/
+/*  color: #c0c0c0;*/
+/*  text-align: center;*/
+/*  font-size: 30px;*/
+/*  text-decoration: none;*/
+/*  margin-bottom:10px;*/
+/*}*/
+
+
+/*.profile_img img{*/
+/*  width:250px;*/
+/*  height:250px;*/
+/*  border-radius:135px;*/
+/*}*/
+
+.shima, .janru{
+  margin:0;
+  font-size:20px;
 }
 
 .img_container{
@@ -26,19 +81,17 @@
   justify-content:center;
 }
 
-.img-detail {
-  margin-top: 30px;
-  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr);
-  display: grid;
-  gap: 27px;
-  text-align: center;
+.img_detail{
+  text-align:center;
 }
 
-.img-detail img{
-  width:100%;
+.img_detail img{
+  max-width:100%;
   height:auto;
-  object-fit:cover;
+  display:block;
+  margin:0 auto;
 }
+
 
 .text {
   font-size: 20px;
@@ -54,19 +107,5 @@
     gap: 20px;
   }
  
- /*#detail {*/
- /*  width: auto;*/
- /*  margin:20px 0;*/
- /*}*/
- 
- /*.username{*/
- /*  width:auto;*/
- /*  margin: 20px 0;*/
- /*}*/
- 
- /*.img-detail {*/
- /*  grid-template-columns:repeat(1,minmax(0,1fr));*/
- /*  gap:20px;*/
- /*}*/
-
 }
+

@@ -17,11 +17,10 @@
                         <img src="{{ asset('storage/img/'.$user->profile_img) }}">
                     @endif
                 @endisset
-    
-            <p><a href="{{ route('mypage.change',['user_id'=>$user_id]) }}">{{ $user_name }}</a></p>
-            <br>
-            </div>  
-        </div>
+            </div>
+        <p><a href="{{ route('mypage.change',['user_id'=>$user_id]) }}">{{ $user_name }}</a></p>
+        <br>
+        </div>  
     </div>
  
     <hr>

@@ -4,14 +4,27 @@
 @section('title', '写真詳細')
 
 @section('content')
-<div id="detail">
-    <div class="username">
-        <p>{{ $user_name }}</p>
-        <h2><a href="{{ route('mypage.index', ['id' => $photo->user->id,'user_name' => $photo->user->name]) }}">{{ $photo->user->name }}</a></h2>
+<div class="page">
+    <div class="text_username">
+        <div class="img_p">
+            <div class="profile_img">
+                @isset($user)
+                    @if($user->profile_img == null)
+                        <img src="{{ asset('storage/img/default.jpeg') }}">
+                    @else
+                        <img src="{{ asset('storage/img/'.$user->profile_img) }}">
+                    @endif
+                @endisset
+    
+                <p>{{ $user_name }}</p>
+                <h2><a href="{{ route('mypage.index', ['id' => $photo->user->id,'user_name' => $photo->user->name]) }}">{{ $photo->user->name }}</a></h2>
+        <br>
+            </div>  
+        </div>
     </div>
     
-    <div>{{ $photo->island_name }}</div>
-    <div>{{ $photo->genre }}</div>
+    <div class="shima">{{ $photo->island_name }}</div>
+    <div class="janru">{{ $photo->genre }}</div>
     <br>
     
     <div class="img_container">
