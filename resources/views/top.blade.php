@@ -48,6 +48,8 @@
                             <a href="island/top?name=青ヶ島" class="island-link"><img src=" {{ asset('storage/青ヶ島.jpg') }}" alt="aogashima"></a>
                         </div>
                     </div>
+                    <div class="footer">
+                    </div>
                 </div>
             </section>
         </div>

@@ -2,7 +2,9 @@
 /*伊豆諸島一覧*/
 .islands-list {
   width: 100%;
-  margin: 0 auto;
+  margin-top:100px;
+  margin-bottom:30px;
+  /*margin: 0 auto;*/
   padding-bottom:150px;
 }
 

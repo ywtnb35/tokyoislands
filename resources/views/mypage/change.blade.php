@@ -5,8 +5,8 @@
 
 @section('content')
 <script src="{{ asset('public/js/change.js') }}"></script>
-
-<div class="profile">
+<div class="page">
+    <div class="profile">
         <p>プロフィール画像を設定</p>
         <br>
         
@@ -31,11 +31,11 @@
         
     </div>
     
-    <div>
+    <div class="delete">
         <a href="{{ route('mypage.delete') }}">削除</a>
     </div>
     </form>
-    </div>
+</div>
     @endisset
 </div>
 @endsection
