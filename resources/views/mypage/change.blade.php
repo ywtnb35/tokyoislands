@@ -26,9 +26,10 @@
             @endif
             <input type="file" name="profile_img" id="input_pi">
         <br>
-        <button type="submit">写真を設定</button>
+        <div class="settei">
+            <button type="submit">写真を設定</button>
         <br>
-        
+        </div>
     </div>
     
     <div class="delete">

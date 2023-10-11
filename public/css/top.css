@@ -16,6 +16,7 @@ h2 {
 }
 
 .island-container {
+  margin-top:40px;
   grid-template-columns: repeat(2, 1fr);
   display: grid;
   gap: 27px;
@@ -60,11 +61,22 @@ section {
 
 
 
-@media (max-width: 768px) {
-  .island-container {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-  }
-}  
 
+@media (max-width: 768px) {
+
+  .header {
+    height: auto;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .logo img {
+    position: static;
+    top: auto;
+    right: auto;
+    margin: 0;
+  }
+}
 

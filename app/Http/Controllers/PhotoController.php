@@ -74,11 +74,11 @@ class PhotoController extends Controller
         if (empty($photo)) {
             abort(404);
         }
-        // $id = $photo->id;
+       
         $user = User::find($photo->user_id);
-        $user_name = $photo->user_name;
-
-        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo,'user'=>$user]);
+        $user_name = $user->name;
+        $user_id = $request->user_id;
+        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo,'user'=>$user,'user_id'=>$user_id]);
     }
     
     //検索画面表示

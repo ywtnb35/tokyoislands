@@ -22,6 +22,7 @@
     <link href="{{ secure_asset('css/islandtop.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/detail.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/mypage.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/mypagedetail.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/create.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/search.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/change.css') }}" rel="stylesheet">

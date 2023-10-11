@@ -1,22 +1,11 @@
-/*.page{*/
-/*    width:980px;*/
-/*    margin:0 auto;*/
-/*}*/
-
-/*.profile_img img{*/
-/*    width:180px;*/
-/*    height:180px;*/
-/*    border-radius:135px;*/
-/*    margin-top:30px;*/
-/*}*/
-
 .profile {
   width: 100%;
   max-width: 980px;
-  margin: 0 auto;
+  margin-top:130px;
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
+  font-size:20px;
 }
 
 .profile_img {
@@ -37,6 +26,9 @@
   margin-top: 20px;
 }
 
+.settei {
+  margin-top:40px;
+}
 
 .delete {
   margin-top: 20px;

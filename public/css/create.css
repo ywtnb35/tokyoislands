@@ -1,5 +1,5 @@
 .new_post{
-    width:1200px;
+    width:100%;
     margin:0 auto;
     text-align:center;
 }
@@ -39,3 +39,8 @@ button{
     border-radius:10px;
 }
 
+@media (max-width: 768px) {
+ .new_post {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }

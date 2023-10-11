@@ -37,6 +37,8 @@
         <label>＜コメント＞</label>
         <p class="txt_size" style="white-space:pre-wrap;">{{ $photo->text }}</p>
     </div>
- 
+<br>
+<br>
+<br>
 </div>
 @endsection
