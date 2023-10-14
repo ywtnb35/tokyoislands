@@ -43,7 +43,9 @@ class UserController extends Controller
         $user_id = Auth::id();
     
         if($user_id != $request->user_id){
-            abort(404);
+            $user = User::find($request->user_id);
+            $user_name = $user ? $user->name : null;
+            return redirect()->route('mypage.index',['id'=>$request->user_id,'user_name'=>$user_name]);
         }
     
         $user = User::find($user_id);

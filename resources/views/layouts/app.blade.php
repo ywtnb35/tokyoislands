@@ -26,6 +26,7 @@
     <link href="{{ secure_asset('css/create.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/search.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/change.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/login.css') }}" rel="stylesheet">
 </head>
 <body>
     <a href="/top">

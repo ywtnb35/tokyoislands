@@ -1,6 +1,6 @@
 .main {
   width: 100%;
-  margin-top: 130px;
+  margin-top: 150px;
 }
 
 .col-img {
@@ -17,6 +17,7 @@
   color: #ffffff;
   font-size: 55px;
 }
+
 
 .island_link {
   margin-top: 10px;
@@ -89,6 +90,7 @@
   display: grid;
   gap: 25px;
   margin-bottom: 60px;
+  margin-top:40px;
 }
 
 .photo-item img{

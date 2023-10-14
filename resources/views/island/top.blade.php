@@ -21,8 +21,6 @@
             @endif
         </div>
     
-        <br>
-    
         <div class="col-md-8 mx-auto">
             @if($island)
             <div class="island_link">
@@ -30,9 +28,7 @@
             </div>
             @endif
         </div>
-        
-        <br>
-        <br>
+
         
         <div class="genre_btn">
             @if($island)

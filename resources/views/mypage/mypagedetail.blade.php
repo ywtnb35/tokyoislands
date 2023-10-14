@@ -29,9 +29,15 @@
         <div class="text">
             <label>＜コメント＞</label>
             <p class="txt_size"  style="white-space:pre-wrap;">{{ $photo->text }}</p>
+            <br>
+            
+            <div class="comment_ref">
+                <div style="display: inline-block; background: #b0c4de; padding: 3px 10px; color: #000000;"><strong>＊コメント＊</strong></div>
+                <div style="padding: 100px; border: 2px solid #b0c4de;"></div>
+        </div>
         </div>
         <div class="photo_del">
-            <a href="{{ route('photo.delete',['id' => $photo->id]) }}">削除</a>
+            <a href="{{ route('photo.delete',['id' => $photo->id]) }}">投稿削除</a>
         </div>
     </div>
     <br>
