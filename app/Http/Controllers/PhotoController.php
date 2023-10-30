@@ -64,7 +64,9 @@ class PhotoController extends Controller
         $user = User::find($photo->user_id);
         $user_name = $photo->user_name;
         
-        return view('island.photo.detail',['photo'=>$photo,'user_name'=>$user_name,'user'=>$user]);
+        //コメント表示する処理
+        
+        return view('island.photo.detail',['photo'=>$photo,'user_name'=>$user_name,'user'=>$user]); //コメント追加
     }
     
     //マイページの写真詳細ページ
@@ -78,8 +80,14 @@ class PhotoController extends Controller
         $user = User::find($photo->user_id);
         $user_name = $user->name;
         $user_id = $request->user_id;
-        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo,'user'=>$user,'user_id'=>$user_id]);
+        
+        //コメント表示する処理
+        
+        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo,'user'=>$user,'user_id'=>$user_id]); //コメント追加
     }
+    
+    //　コメントを登録する処理
+    
     
     //検索画面表示
     public function showSearch(Request $request){
@@ -119,4 +127,5 @@ class PhotoController extends Controller
         
         return redirect()->route('island.top', ['name' => $photo->island_name]);
     }
+
 }

@@ -43,6 +43,7 @@ Route::controller(PhotoController::class)->prefix('island')->group(function(){
     Route::post('photo/create','create')->name('photo.create')->middleware('auth');
     Route::get('photo/show','show')->name('photo.show');
     Route::get('mypage/detail','detail')->name('mypage.detail');
+    Route::post('photo/detail','comment')->name('photo.comment');
     Route::get('photo/delete', 'delete')->name('photo.delete');
     Route::post('photo/delete','delete')->name('photo.delete');
     Route::get('photo/search','showSearch')->name('photo.showSearch');

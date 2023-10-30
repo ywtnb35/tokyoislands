@@ -1,6 +1,8 @@
 .main {
-  width: 100%;
-  margin-top: 150px;
+  width:100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding:0 20px;
 }
 
 .col-img {
@@ -49,12 +51,12 @@
   width: 100%;
 }
 
-.island-detail {
-  margin-top: 30px;
-  grid-template-columns: repeat(2, 1fr);
-  display: grid;
-  gap: 27px;
-}
+/*.island-detail {*/
+/*  margin-top: 30px;*/
+/*  grid-template-columns: repeat(2, 1fr);*/
+/*  display: grid;*/
+/*  gap: 25px;*/
+/*}*/
 
 .genre_btn {
   text-align:center;
@@ -88,13 +90,16 @@
   height: auto;
   grid-template-columns: repeat(2, 1fr);
   display: grid;
-  gap: 25px;
+  column-gap:10px;
+  gap:30px;
   margin-bottom: 60px;
   margin-top:40px;
 }
 
 .photo-item img{
-  width:100%;
+  display:block;
+  margin:0 auto;
+  max-width:100%;
   height:auto;
   -o-object-fit: cover;
 }

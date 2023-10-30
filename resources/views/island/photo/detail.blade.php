@@ -38,18 +38,17 @@
         <p class="txt_size" style="white-space:pre-wrap;">{{ $photo->text }}</p>
     </div>
 <br>
+
     <div class="user_comment">
-        <div class="comment_ref">
-            <div style="display: inline-block; background: #b0c4de; padding: 3px 10px; color: #000000;"><strong>＊コメント＊</strong></div>
-            <div style="padding: 100px; border: 2px solid #b0c4de;"></div>
-        </div>
-        <br>
-        <br>
-        <form method="post" action="sample.cgi">
-        <textarea name="comment" rows="4" cols="80">コメント入力</textarea><br>
-        <input type="submit" value="コメント投稿">
-        </form>
+    <div class="comment_list">
+        <div class="comment_title"><lavel>＊コメント＊</lavel></div>
+        <div class="comment_content"></div>
     </div>
-<br>
+    
+    <form method="post" action="{{ route('photo.comment') }}" enctype="multipart/form-data">
+        <textarea class="comment" name="comment" placeholder="コメントを入力"></textarea>
+        <input type="submit" class="submit_button" value="コメント投稿">
+    </form>
+ 
 </div>
 @endsection

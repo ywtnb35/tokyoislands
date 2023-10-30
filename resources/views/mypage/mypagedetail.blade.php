@@ -31,10 +31,16 @@
             <p class="txt_size"  style="white-space:pre-wrap;">{{ $photo->text }}</p>
             <br>
             
-            <div class="comment_ref">
-                <div style="display: inline-block; background: #b0c4de; padding: 3px 10px; color: #000000;"><strong>＊コメント＊</strong></div>
-                <div style="padding: 100px; border: 2px solid #b0c4de;"></div>
+        <div class="user_comment">
+        <div class="comment_list">
+            <div class="comment_title"><lavel>＊コメント＊</lavel></div>
+            <div class="comment_content"></div>
         </div>
+    
+        <form method="post" action="{{ route('photo.comment') }}" enctype="multipart/form-data">
+            <textarea class="comment" name="comment" placeholder="コメントを入力"></textarea>
+            <input type="submit" class="submit_button" value="コメント投稿">
+        </form>
         </div>
         <div class="photo_del">
             <a href="{{ route('photo.delete',['id' => $photo->id]) }}">投稿削除</a>
