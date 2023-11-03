@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->string('photo_id');
-            $table->string('user_id');
-            $table->string('comment');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('comments')) {
+            Schema::create('comments', function (Blueprint $table) {
+                $table->id();
+                $table->string('photo_id');
+                $table->string('user_id');
+                $table->string('comment');
+                $table->timestamps();
+            });
+        }   
     }
-
     /**
      * Reverse the migrations.
      *

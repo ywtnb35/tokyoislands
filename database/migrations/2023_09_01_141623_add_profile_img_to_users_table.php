@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('profile_img')->nullable();
+            if(!Schema::hasColumn('users','profile_img')){
+                $table->string('profile_img')->nullable();
+            }
         });
     }
 
@@ -26,7 +28,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            if(!Schema::hasColumn('users','profile_img')){
+                $table->dropColumn('prifile_img');
+            }
         });
     }
 };
