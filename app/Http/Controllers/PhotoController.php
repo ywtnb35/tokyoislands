@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Photo;
 use App\Models\Island;
 use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -66,7 +67,10 @@ class PhotoController extends Controller
         
         //コメント表示する処理
         
-        return view('island.photo.detail',['photo'=>$photo,'user_name'=>$user_name,'user'=>$user]); //コメント追加
+        $comment = $photo->comment;
+        
+        
+        return view('island.photo.detail',['photo'=>$photo,'user_name'=>$user_name,'user'=>$user,'comment'=>$comment]); //コメント追加
     }
     
     //マイページの写真詳細ページ
@@ -82,11 +86,27 @@ class PhotoController extends Controller
         $user_id = $request->user_id;
         
         //コメント表示する処理
+        $comment = $photo->comment;
         
-        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo,'user'=>$user,'user_id'=>$user_id]); //コメント追加
+        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo,'user'=>$user,'user_id'=>$user_id,'comment'=>$comment]); //コメント追加
     }
     
     //　コメントを登録する処理
+    public function comment(Request $request)
+    {
+        $comment = new Comment();
+        
+        $user = Auth::user();
+        if($user){
+            $comment->user_id = $user->id;
+        }
+        
+        $comment->photo_id = $request->input('photo_id');
+        $comment->comment = $request->input('comment');
+        $comment->save();
+        
+        return redirect()->route('island.photo.show',['id'=>$comment->photo_id]);
+    }
     
     
     //検索画面表示

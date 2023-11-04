@@ -15,6 +15,10 @@ class Comment extends Model
         'photo_id',
         'comment',
         ];
+    
+    public static $rules = array(
+        'comment' => 'required|max:255',
+    );
         
     public function user()
     {

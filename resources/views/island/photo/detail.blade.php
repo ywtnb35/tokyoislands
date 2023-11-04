@@ -46,6 +46,8 @@
     </div>
     
     <form method="post" action="{{ route('photo.comment') }}" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="photo_id" value="{{ $photo->id }}">
         <textarea class="comment" name="comment" placeholder="コメントを入力"></textarea>
         <input type="submit" class="submit_button" value="コメント投稿">
     </form>
