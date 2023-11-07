@@ -42,7 +42,10 @@
     <div class="user_comment">
     <div class="comment_list">
         <div class="comment_title"><lavel>＊コメント＊</lavel></div>
-        <div class="comment_content"></div>
+        <div class="comment_content">
+            <div class="userName">〇user_name</div>
+                <div class="comment_ref">きれいですね</div>
+        </div>
     </div>
     
     <form method="post" action="{{ route('photo.comment') }}" enctype="multipart/form-data">

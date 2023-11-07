@@ -67,10 +67,10 @@ class PhotoController extends Controller
         
         //コメント表示する処理
         
-        $comment = $photo->comment;
+        $comments = $photo->comments;
         
         
-        return view('island.photo.detail',['photo'=>$photo,'user_name'=>$user_name,'user'=>$user,'comment'=>$comment]); //コメント追加
+        return view('island.photo.detail',['photo'=>$photo,'user_name'=>$user_name,'user'=>$user,'comments'=>$comments]); //コメント追加
     }
     
     //マイページの写真詳細ページ
@@ -86,26 +86,30 @@ class PhotoController extends Controller
         $user_id = $request->user_id;
         
         //コメント表示する処理
-        $comment = $photo->comment;
+        $comments = $photo->comments;
         
-        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo,'user'=>$user,'user_id'=>$user_id,'comment'=>$comment]); //コメント追加
+        return view('mypage.mypagedetail',['user_name'=>$user_name,'photo'=>$photo,'user'=>$user,'user_id'=>$user_id,'comments'=>$comments]); //コメント追加
     }
     
     //　コメントを登録する処理
     public function comment(Request $request)
     {
+        $this->validate($request, Comment::$rules);
+        
         $comment = new Comment();
         
         $user = Auth::user();
         if($user){
             $comment->user_id = $user->id;
+        } else {
+            return redirect()->route('login');
         }
         
         $comment->photo_id = $request->input('photo_id');
         $comment->comment = $request->input('comment');
         $comment->save();
         
-        return redirect()->route('island.photo.show',['id'=>$comment->photo_id]);
+        return redirect()->route('photo.show',['id'=>$comment->photo_id]);
     }
     
     
