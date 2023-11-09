@@ -43,9 +43,11 @@
     <div class="comment_list">
         <div class="comment_title"><lavel>＊コメント＊</lavel></div>
         <div class="comment_content">
-            <div class="userName">〇user_name</div>
-                <div class="comment_ref">きれいですね</div>
+             @foreach($comments as $comment)
+            <div class="userName">{{ $comment->user->name }}</div>
+                <div class="comment_ref">{{ $comment->comment }}</div>
         </div>
+        @endforeach
     </div>
     
     <form method="post" action="{{ route('photo.comment') }}" enctype="multipart/form-data">
