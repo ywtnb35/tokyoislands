@@ -61,7 +61,7 @@ class UserController extends Controller
     {
         $user = Auth::user(); 
     
-        if ($request->hasFil('profile_img')) { 
+        if ($request->hasFile('profile_img')) { 
             $path = $request->file('profile_img')->store('public/img');
             $user->profile_img = basename($path);
         }else{

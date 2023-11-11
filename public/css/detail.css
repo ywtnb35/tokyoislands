@@ -86,7 +86,36 @@
   align-items:flex-start;
 }
 
-.userName,
+
+.photo_detail_profile {
+  display:flex;
+  align-items:center;
+  margun-botto:30px;
+}
+
+.photo_detail_profile .comment_profile {
+  margin-right:10px;
+}
+
+.photo_detail_profile .comment_profile img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.photo_detail_profile .comment_text {
+  flex-grow:1;
+}
+
+.photo_detail_profile .userName{
+  font-weight:bold;
+}
+
+.userName {
+  margin-bottom:5px;
+}
+
+
 .commenr_ref {
   align-self:flex-start;
   text-align:left;

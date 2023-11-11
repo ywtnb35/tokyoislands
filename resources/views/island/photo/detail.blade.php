@@ -40,15 +40,27 @@
 <br>
 
     <div class="user_comment">
-    <div class="comment_list">
-        <div class="comment_title"><lavel>＊コメント＊</lavel></div>
-        <div class="comment_content">
-             @foreach($comments as $comment)
-            <div class="userName">{{ $comment->user->name }}</div>
-                <div class="comment_ref">{{ $comment->comment }}</div>
-        </div>
-        @endforeach
-    </div>
+        <div class="comment_list">
+            <div class="comment_title"><lavel>＊コメント＊</lavel></div>
+            <div class="comment_content">
+                @foreach($comments as $comment)
+                    <div class="photo_detail_profile">
+                        <div class="comment_profile">
+                            @isset($user)
+                                @if($user->profile_img == null)
+                                    <img src="{{ asset('storage/img/default.jpeg') }}">
+                                @else
+                                    <img src="{{ asset('storage/img/'.$user->profile_img) }}">
+                                @endif
+                            @endisset
+                        </div>
+                        <div class="comment_text">
+                            <div class="userName">{{ $comment->user->name }}</div>
+                            <div class="comment_ref">{{ $comment->comment }}</div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
     
     <form method="post" action="{{ route('photo.comment') }}" enctype="multipart/form-data">
         @csrf
