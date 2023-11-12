@@ -55,7 +55,11 @@
                             @endisset
                         </div>
                         <div class="comment_text">
-                            <div class="userName">{{ $comment->user->name }}</div>
+                            <div class="userName">
+                                <a href=" {{ route('mypage.index',['id'=> $comment->user->id, 'user_name' => $comment->user->name]) }} ">
+                                    {{ $comment->user->name }}
+                                </a>
+                            </div>
                             <div class="comment_ref">{{ $comment->comment }}</div>
                         </div>
                     </div>

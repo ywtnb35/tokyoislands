@@ -31,16 +31,33 @@
             <p class="txt_size"  style="white-space:pre-wrap;">{{ $photo->text }}</p>
             <br>
             
-        <div class="user_comment">
+    <div class="user_comment">
         <div class="comment_list">
             <div class="comment_title"><lavel>＊コメント＊</lavel></div>
-            <div class="comment_content"></div>
-        </div>
+            <div class="comment_content">
+                @foreach($comments as $comment)
+                    <div class="photo_detail_profile">
+                        <div class="comment_profile">
+                            @isset($user)
+                                @if($user->profile_img == null)
+                                    <img src="{{ asset('storage/img/default.jpeg') }}">
+                                @else
+                                    <img src="{{ asset('storage/img/'.$user->profile_img) }}">
+                                @endif
+                            @endisset
+                        </div>
+                        <div class="comment_text">
+                            <div class="userName">
+                                <a href=" {{ route('mypage.index',['id'=> $comment->user->id, 'user_name' => $comment->user->name]) }} ">
+                                    {{ $comment->user->name }}
+                                </a>
+                            </div>
+                            <div class="comment_ref">{{ $comment->comment }}</div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
     
-        <form method="post" action="{{ route('photo.comment') }}" enctype="multipart/form-data">
-            <textarea class="comment" name="comment" placeholder="コメントを入力"></textarea>
-            <input type="submit" class="submit_button" value="コメント投稿">
-        </form>
         </div>
         <div class="photo_del">
             <a href="{{ route('photo.delete',['id' => $photo->id]) }}">投稿削除</a>

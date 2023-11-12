@@ -78,7 +78,7 @@
 }
 
 .comment_content {
-  padding: 100px;
+  padding: 30px;
   border: 2px solid #b0c4de;
   clear:both;
   display:flex;
@@ -112,13 +112,20 @@
 }
 
 .userName {
-  margin-bottom:5px;
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:0.5em;
+  line-height: 1.2;
+  /*margin-bottom:5px;*/
 }
 
 
-.commenr_ref {
+.comment_ref {
+  line-height:1.3;
+  margin-bottom:0.5em;
   align-self:flex-start;
   text-align:left;
+  text-indent:1.0em;
 }
 
 .comment {
