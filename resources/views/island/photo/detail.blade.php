@@ -46,13 +46,11 @@
                 @foreach($comments as $comment)
                     <div class="photo_detail_profile">
                         <div class="comment_profile">
-                            @isset($user)
-                                @if($user->profile_img == null)
+                                @if($comment->user->profile_img == null)
                                     <img src="{{ asset('storage/img/default.jpeg') }}">
                                 @else
-                                    <img src="{{ asset('storage/img/'.$user->profile_img) }}">
+                                    <img src="{{ asset('storage/img/'.$comment->user->profile_img) }}">
                                 @endif
-                            @endisset
                         </div>
                         <div class="comment_text">
                             <div class="userName">
