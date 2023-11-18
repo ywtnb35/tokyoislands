@@ -39,6 +39,8 @@
     </div>
 <br>
 
+<!--いいね表示-->
+
     <div class="user_comment">
         <div class="comment_list">
             <div class="comment_title"><lavel>＊コメント＊</lavel></div>
