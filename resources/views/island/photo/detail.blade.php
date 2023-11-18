@@ -40,7 +40,11 @@
 <br>
 
 <!--いいね表示-->
-
+    <div class="like-button">
+        <button class="like">いいね</button>
+        <span>10件</span>
+    </div>
+    
     <div class="user_comment">
         <div class="comment_list">
             <div class="comment_title"><lavel>＊コメント＊</lavel></div>

@@ -53,4 +53,34 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Comment');
     }
+    
+    public function likes()
+    {
+        return $this->belongsToMany('App\Models\Photo','likes','user_id','photo_id')->withTimestamps();
+    }
+    
+    ////この投稿に対して既にlikeしたかどうかを判別する
+    public function isLike($photo_id)
+    {
+        return $this->likes()->where('photo_id',$photo_id)->exists();
+    }
+    
+    //isLikeを使って、既にlikeしたか確認したあと、いいねする（重複させない）
+    public function like($photo_id)
+    {
+        if(!$this->isLike($photo_id)){
+            //もし既にいいねしていたら何もしない
+        }else{
+            $this->likes()->attach($photo_id);
+        }
+    }
+    
+    //isLikeを使って、既にlikeしたか確認して、もししていたら解除する
+    public function unlike($photo_id)
+    {
+        if($this->isLike($photo_id)){
+            //もし既に「いいね」していたら消す
+            $this->likes()->detach($photo_id);
+        }
+    }
 }

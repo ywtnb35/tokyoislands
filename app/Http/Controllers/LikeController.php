@@ -14,4 +14,15 @@ use Intervention\Image\Facades\Image;
 class LikeController extends Controller
 {
     //
+    public function store($photo_id)
+    {
+        Auth::user()->like($photo_id);
+        return 'good!';
+    }
+    
+    public function destroy($photo_id)
+    {
+        Auth::user()->unlike($photo_id);
+        return 'ok!';
+    }
 }

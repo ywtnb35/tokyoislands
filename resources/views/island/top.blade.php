@@ -46,6 +46,10 @@
                     @foreach($photos as $photo)
                     <div class="photo-item">
                         <a href="{{ route('photo.show',['id'=>$photo->id]) }}" ><img src="{{ secure_asset('storage/img/' . $photo->island_image) }}" alt=""></a>
+                            <div class="like-button">
+                                <button class="like">いいね</button>
+                                <span>10件</span>
+                            </div> 
                     </div>
                     @endforeach
                 @endisset

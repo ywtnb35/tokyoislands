@@ -14,7 +14,7 @@ class IslandController extends Controller
     {
         $island_name = $request->name; //リクエストからnameを取得し$island_nameに代入
         $genre = $request->genre; //リクエストからgenreを取得し$genreに代入
-        $island_img = $request->name . ".jpg"; //島の名前に.jpgをつけて島の画像を取得
+        $island_img = $request->name . ".jpg"; //島の名前に.jpgをつけてファイルを生成
         
         $island = Island::where('island_name',$island_name)->first(); //Islandモデルからisland_nameカラムと$island_nameが一致するデータを取得
         
