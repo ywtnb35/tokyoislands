@@ -51,6 +51,12 @@ Route::controller(PhotoController::class)->prefix('island')->group(function(){
 
 });
 
+use App\Http\Controllers\LikeController;
+Route::controller(LikeController::class)->prefix('island')->group(function(){
+    Route::post('like/{photo_id}','store')->name('photo.store');
+    Route::post('unlike/{photo_id}','destroy')->name('mypage.destroy');
+});
+
 Auth::routes();
 
 use App\Http\Controllers\Auth\LoginController;
