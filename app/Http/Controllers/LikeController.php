@@ -17,7 +17,8 @@ class LikeController extends Controller
     //
     public function store($photo_id)
     {
-        $photo = Photo::find('photo_id');
+        $photo = Photo::find($photo_id);
+    
         if($photo){
             Auth::user()->like($photo_id);
             $likes_count = $photo->likes->count();
