@@ -14,25 +14,27 @@ use Intervention\Image\Facades\Image;
 
 class LikeController extends Controller
 {
-    //
     public function store($photo_id)
     {
+        $user = Auth::user();
         $photo = Photo::find($photo_id);
-    
-        if($photo){
-            Auth::user()->like($photo_id);
-            $likes_count = $photo->likes->count();
-            return response()->json(['likes_count'=>$likes_count]);
+        if(!$user || $photo){
+            return response()->json(['error'=> 'User or Photo not found'], 404);
         }
+        $user->like($photo_id);
+        $likes_count = $photo->likes()->count();
+        return response()->json(['likes_count'=>$likes_count]);
     }
     
     public function destroy($photo_id)
     {
+        $user = Auth::user();
         $photo = Photo::find($photo_id);
-        if($photo){
-            Auth::user()->unlike($photo->id);
-            $likes_count = $photo_id->likes->count();
-            return response()->json(['likes_count'=>$likes_count]);
+        if(!$user || $photo){
+            return response()->json(['error'=>'User or Photo not found'], 404);
         }
+        $user->unlike($photo_id);
+         $likes_count = $photo->likes()->count();
+        return response()->json(['likes_count'=>$likes_count]); 
     }
 }

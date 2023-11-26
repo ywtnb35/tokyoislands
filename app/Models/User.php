@@ -56,7 +56,7 @@ class User extends Authenticatable
     
     public function likes()
     {
-        return $this->belongsToMany('App\Models\Photo','likes','user_id','photo_id')->withTimestamps();
+        return $this->belongsToMany('App\Models\Photo','likes','photo_id','user_id')->withTimestamps();
     }
     
     ////この投稿に対して既にlikeしたかどうかを判別する
@@ -68,10 +68,10 @@ class User extends Authenticatable
     //isLikeを使って、既にlikeしたか確認したあと、いいねする（重複させない）
     public function like($photo_id)
     {
-        if(!$this->isLike($photo_id)){
+        if($this->isLike($photo_id)){
             //もし既にいいねしていたら何もしない
         }else{
-            $this->likes()->attach($photo_id);
+            $this->likes()->attach($photo_id,['user_id' => $this->id]);
         }
     }
     
@@ -80,7 +80,7 @@ class User extends Authenticatable
     {
         if($this->isLike($photo_id)){
             //もし既に「いいね」していたら消す
-            $this->likes()->detach($photo_id);
+            $this->likes()->detach($photo_id,['user_id' => $this->id]);
         }
     }
 }

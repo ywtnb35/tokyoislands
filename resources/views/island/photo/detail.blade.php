@@ -41,7 +41,7 @@
 
 <!--いいね表示-->
     <div class="like-button">
-        <button class="like"　data-photo-id="{{ $photo->id }}">いいね</button>
+        <button class="like" data-photo-id="1">いいね</button>
         <span id="like-count-{{ $photo->id }}">{{ $photo->likes_count }}10件</span>
     </div>
     
