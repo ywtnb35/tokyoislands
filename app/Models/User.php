@@ -59,7 +59,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Photo','likes','photo_id','user_id')->withTimestamps();
     }
     
-    ////この投稿に対して既にlikeしたかどうかを判別する
+    //この投稿に対して既にlikeしたかどうかを判別する
     public function isLike($photo_id)
     {
         return $this->likes()->where('photo_id',$photo_id)->exists();
