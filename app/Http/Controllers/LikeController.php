@@ -18,7 +18,7 @@ class LikeController extends Controller
     {
         $user = Auth::user(); //ログインしているユーザーを取得
         $photo = Photo::find($photo_id); //指定されたidを写真のデータベースから取得
-        if(!$user || $photo){ //ユーザーまたは写真が見つからなかったらerrorを返す
+        if(!$user || !$photo){ //ユーザーまたは写真が見つからなかったらerrorを返す
             return response()->json(['error'=> 'User or Photo not found'], 404);
         }
         $user->like($photo_id); //likeメソッドを呼び出し写真へのいいねを追加
@@ -30,7 +30,7 @@ class LikeController extends Controller
     {
         $user = Auth::user(); //ログインユーザーを取得
         $photo = Photo::find($photo_id); //指定されたidを写真のデータベースから取得
-        if(!$user || $photo){
+        if(!$user || !$photo){
             return response()->json(['error'=>'User or Photo not found'], 404);
         }
         $user->unlike($photo_id); //いいねの削除
