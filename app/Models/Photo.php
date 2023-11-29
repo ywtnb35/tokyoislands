@@ -35,6 +35,6 @@ class Photo extends Model
     
     public function likes()
     {
-        return $this->hasMany('App\Models\User','likes','user_id','photo_id')->withTimestamps();
+        return $this->belongsToMany('App\Models\User','likes','user_id','photo_id','user_id')->withTimestamps();
     }
 }
