@@ -42,7 +42,7 @@
 <!--いいね表示-->
     <div class="like-button">
         <button class="like" data-photo-id="{{ $photo->id }}">いいね</button>
-        <span id="like-count-{{ $photo->id }}">{{ $photo->likes_count }}10件</span>
+            <span id="like-count-{{ $photo->id }}">{{ $photo->likes_count }}件</span>
     </div>
     
     <div class="user_comment">
