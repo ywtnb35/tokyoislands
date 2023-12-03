@@ -62,12 +62,10 @@ $(document).ready(function() {
             data: { _token: $('meta[name="csrf-token"]').attr('content') },
             success: function(response) {
             console.log("Photo ID: " + photoId + ", Likes Count: " + response.likesCount);
-            $('#like-count-' + photoId).text(response.likesCount + '件'); // ここを修正
+            $('#like-count-' + photoId).text(response.likesCount + '件'); 
             $this.toggleClass('liked');
+            $('.like-count[data-photo-id="' + photoId + '"]').text(response.likesCount + '件');
             }
         });
     });
 });
-
-
-

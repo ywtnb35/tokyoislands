@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Photo extends Model
 {
@@ -42,4 +43,20 @@ class Photo extends Model
     // {
     //     return $this->belongsToMany('App\Models\User','likes','photo_id','user_id')->withTimestamps();
     // }
+    
+        /**
+     * 現在認証されているユーザーがこの写真に「いいね」しているか判定する
+     *
+     * @return bool
+     */
+    public function is_liked_by_auth_user()
+    {
+        $user = Auth::user();
+
+        if (!$user) {
+            return false;
+        }
+        
+        return $this->likes->contains('user_id', $user->id);
+    }
 }
