@@ -39,7 +39,6 @@ class LikeController extends Controller
     
     public function destroy($photo_id)
     {
-        Log::info("Destroy method called with photo_id: " . $photo_id);
         $like = Like::where('photo_id',$photo_id)->whre('user_id',auth()->user()->id)->first();
         if ($like){
             $like->delete();

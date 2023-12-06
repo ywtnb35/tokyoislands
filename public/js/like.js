@@ -24,33 +24,6 @@
 //     });
 // });
 
-
-// $(document).ready(function() {
-//     $('button.like').on('click', function() {
-//         var button = $(this);
-//         var photo_id = $(this).data('photo-id');
-//         var isLiked = $(this).hasClass('liked');
-//         var url = `/island/${isLiked ? 'unlike' : 'like'}/${photo_id}`;
-//         var method = 'POST'; // 両方のリクエストでPOSTを使用
-
-//         $.ajax({
-//             headers: {
-//                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//             },
-//             url: url,
-//             type: method,
-//             success: function(data) {
-//                 $('#like-count-' + photo_id).text(data.likes_count + 'いいね');
-//                 button.toggleClass('liked');
-//             },
-//             error: function(xhr, status, error) {
-//                 console.error("Error:", error);
-//             }
-//         });
-//     });
-// });
-
-
 $(document).ready(function() {
     $('.like-button').click(function() {
         var photoId = $(this).find('.like').data('photo-id');
@@ -63,7 +36,7 @@ $(document).ready(function() {
             success: function(response) {
             console.log("Photo ID: " + photoId + ", Likes Count: " + response.likesCount);
             $('#like-count-' + photoId).text(response.likesCount + '件'); 
-            $this.toggleClass('liked');
+            $this.find('.like').toggleClass('liked');
             $('.like-count[data-photo-id="' + photoId + '"]').text(response.likesCount + '件');
             }
         });

@@ -76,6 +76,10 @@
   border:1px solid #ccc;
 }
 
+.liked{
+  background-color:#b0c4de;
+}
+
 .like-button span {
   margin-left:10px;
 }
