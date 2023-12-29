@@ -17,34 +17,37 @@ use Illuminate\Support\Facades\Log;
 
 class LikeController extends Controller
     {
-    public function store($photo_id) 
-    {
-        $user_id = auth()->user()->id;
-        $like = Like::where('photo_id', $photo_id)->where('user_id', $user_id)->first();
-    
-        if (!$like) { //すでにいいねされていなければ新しく追加
-            $like = new Like();
-            $like->photo_id = $photo_id;
-            $like->user_id = $user_id;
-            $like->save();
-        }
+        public function store($photo_id) 
+        {
+            $user_id = Auth::id();
+            $like = Like::where('photo_id', $photo_id)->where('user_id', $user_id)->first();
         
-        return response()->json(['likesCount' => Like::where('photo_id', $photo_id)->count()]);
+            if (!$like) { //すでにいいねされていなければ新しく追加
+                $like = new Like();
+                $like->photo_id = $photo_id;
+                $like->user_id = $user_id;
+                $like->save();
+            }
+            
+            return response()->json(['likesCount' => Like::where('photo_id', $photo_id)->count()]);
     }
 
     
-    public function destroy($photo_id)
-    {
-        $user_id = auth()->user()->id;
-        $like = Like::where('photo_id',$photo_id)->whre('user_id',$user_id)->first();
-        if ($like){
-            $like->delete();
-        }
-        
-        return response()->json(['likesCount' =>Like::where('photo_id',$photo_id)->count()]);
+        public function destroy($photo_id)
+        {
+            $user_id = Auth::id(); 
+            $like = Like::where('photo_id', $photo_id)->where('user_id', $user_id)->first();
+            
+    
+            if ($like) {
+                $like->delete();
+                return response()->json(['likesCount' => Like::where('photo_id', $photo_id)->count()]);
+            } else {
+                return response()->json(['error' => 'Like not found'], 404);
+            }
     }
-        
-        
+
+      
     //     $user = Auth::user(); //ログインしているユーザーを取得
     //     $photo = Photo::find($photo_id); //指定されたidを写真のデータベースから取得
     //     if(!$user || !$photo){ //ユーザーまたは写真が見つからなかったらerrorを返す

@@ -30,12 +30,15 @@
             <label>＜コメント＞</label>
             <p class="txt_size"  style="white-space:pre-wrap;">{{ $photo->text }}</p>
             <br>
-         
-    <!--いいね表示-->
+        </div>
+        
+<!--いいね表示-->
     <div class="like-button">
-        <button class="like">いいね</button>
-        <span>10件</span>
+        <button class="like" data-photo-id="{{ $photo->id }}">いいね</button>
+            <span id="like-count-{{ $photo->id }}">{{ $photo->likes_count }}件</span>
     </div>
+    
+
        
     <div class="user_comment">
         <div class="comment_list">

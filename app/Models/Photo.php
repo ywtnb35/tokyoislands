@@ -44,11 +44,7 @@ class Photo extends Model
     //     return $this->belongsToMany('App\Models\User','likes','photo_id','user_id')->withTimestamps();
     // }
     
-        /**
-     * 現在認証されているユーザーがこの写真に「いいね」しているか判定する
-     *
-     * @return bool
-     */
+    
     public function is_liked_by_auth_user()
     {
         $user = Auth::user();

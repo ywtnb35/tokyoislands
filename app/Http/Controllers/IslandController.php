@@ -16,6 +16,7 @@ class IslandController extends Controller
         $genre = $request->genre; //リクエストからgenreを取得し$genreに代入
         $island_img = $request->name . ".jpg"; //島の名前に.jpgをつけてファイルを生成
         
+        
         $island = Island::where('island_name',$island_name)->first(); //Islandモデルからisland_nameカラムと$island_nameが一致するデータを取得
         
         if($genre == null){ //ジャンルが指定されていない場合

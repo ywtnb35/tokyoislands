@@ -46,13 +46,6 @@ class PhotoController extends Controller
         return redirect()->route('island.top', ['name' => $photo->island_name]); //写真が投稿された後、その島のトップページにリダイレクトする
     }
     
-    //写真を表示（島個別ページ）
-    public function index(Request $request,$id) //$id URLから受け取る島の名前を受け取る.$idに代入される
-    {
-        $photos = Photo::where('island_name',$id)->withCount('likes')->get(); //Photoモデルを使用して指定された島の名前に一致する写真データをデータベースから取得し$photosに代入
-
-        return view('island.top', ['photos'=>$photos]);  //island/topに写真を表示する
-    }
     
     //写真詳細ページ
     public function show(Request $request) 
@@ -76,7 +69,7 @@ class PhotoController extends Controller
     //マイページの写真詳細ページ
     public function detail(Request $request)
     { 
-        $photo = Photo::find($request->id); //リクエストからidを取得しそのidに対応する写真をデータベースから探す。
+        $photo = Photo::withCount('likes') ->find($request->id); //リクエストからidを取得しそのidに対応する写真をデータベースから探す。
         if (empty($photo)) { //取得した写真データがない場合
             abort(404); //404エラーを発生させる
         }
