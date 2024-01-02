@@ -107,6 +107,7 @@
   display: block;
   width: 100%;
   height: auto;
+  margin-bottom:10px;
   aspect-ratio: 1.4/ 1; /* アスペクト比を1:1に設定 */
 }
 

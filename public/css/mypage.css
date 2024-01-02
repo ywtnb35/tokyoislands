@@ -33,10 +33,31 @@
   margin-bottom: 60px;
 }
 
-.photo-item {
-  position: relative;
-  -aspect-ratio:1/1;
+.island-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 余白を均等に分配 */
+  gap: 20px; /* 写真間の間隔 */
 }
+
+.photo-item {
+  width: calc(50% - 10px); /* 画面幅の50%に設定（2列の場合） */
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.photo-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom:10px;
+  aspect-ratio: 1.4/ 1; /* アスペクト比を1:1に設定 */
+}
+
+/*.photo-item {*/
+/*  position: relative;*/
+/*  -aspect-ratio:1/1;*/
+/*}*/
 
 .text_size {
   position: relative;
