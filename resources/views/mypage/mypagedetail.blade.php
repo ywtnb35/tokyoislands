@@ -32,12 +32,16 @@
             <br>
         </div>
         
-<!--いいね表示-->
+
+    <!--いいね表示-->
     <div class="like-button">
-        <button class="like" data-photo-id="{{ $photo->id }}">いいね</button>
-            <span id="like-count-{{ $photo->id }}">{{ $photo->likes_count }}件</span>
-    </div>
-    
+        @if ($photo->is_liked_by_auth_user() == 1) 
+            <button class="liked like" data-photo-id="{{ $photo->id }}">いいね</button>
+        @else 
+            <button class="like" data-photo-id="{{ $photo->id }}">いいね</button>
+        @endif
+            <span id="like-count-{{ $photo->id }}">{{ $photo->likes()->count() }}件</span>
+    </div> 
 
        
     <div class="user_comment">
