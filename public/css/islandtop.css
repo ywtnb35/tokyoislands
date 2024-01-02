@@ -61,6 +61,7 @@
 .genre_btn {
   text-align:center;
   margin-top:10px;
+  margin-bottom:30px;
   display:flex;
   justify-content: center;
 }
@@ -82,37 +83,70 @@
   clear: both;
 }
 
-.island-detail{
+.photo-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.island-detail {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 余白を均等に分配 */
+  gap: 20px; /* 写真間の間隔 */
+}
+
+.photo-item {
+  width: calc(50% - 10px); /* 画面幅の50%に設定（2列の場合） */
+  margin-bottom: 20px;
   position: relative;
-  width: auto;
+}
+
+.photo-item img {
+  display: block;
+  width: 100%;
   height: auto;
-  grid-template-columns: repeat(2, 1fr);
-  display: grid;
-  column-gap:10px;
-  gap:30px;
-  margin-bottom: 60px;
-  margin-top:40px;
+  aspect-ratio: 1.4/ 1; /* アスペクト比を1:1に設定 */
 }
 
-.photo-item img{
-  display:block;
-  margin:0 auto;
-  max-width:100%;
-  height:auto;
-  -o-object-fit: cover;
-  margin-bottom:20px;
-}
 
+
+/*.island-detail{*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  position: relative;*/
+/*  width: auto;*/
+/*  height: auto;*/
+/*  grid-template-columns: repeat(2, 1fr);*/
+/*  display: grid;*/
+/*  column-gap:10px;*/
+/*  gap:30px;*/
+/*  margin-bottom: 60px;*/
+/*  margin-top:40px;*/
+/*}*/
+
+/*.photo-item img{*/
+/*  display:block;*/
+/*  margin:0 auto;*/
+/*  max-width:100%;*/
+/*  height:auto;*/
+/*  -o-object-fit: cover;*/
+/*  margin-bottom:20px;*/
+/*}*/
 
 
 @media (max-width: 768px) {
-  .island-detail {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-  }
-  .main{
-    margin-top:100px;
+  .photo-item {
+    width: 100%; /* 画面幅いっぱいに表示 */
   }
 }
+/*@media (max-width: 768px) {*/
+  /*.island-detail {*/
+  /*  grid-template-columns: repeat(1, 1fr);*/
+  /*  gap: 20px;*/
+  /*}*/
+  /*.main{*/
+  /*  margin-top:100px;*/
+  /*}*/
+/*}*/
