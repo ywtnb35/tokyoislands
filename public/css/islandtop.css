@@ -2,13 +2,19 @@
   width:100%;
   max-width: 980px;
   margin: 0 auto;
-  padding:0 20px;
+  padding:120px 20px 0 20px;
 }
 
 .col-img {
-  margin-top: 5px;
+  margin-top:5px;
+  margin-botom:0;
   text-align: center;
   position: relative;
+}
+
+.col-md-8.mx-auto {
+  margin-top: 20px;
+  margin-bottom:20px;
 }
 
 .col-img p {
@@ -22,7 +28,7 @@
 
 
 .island_link {
-  margin-top: 10px;
+  margin-top:0;
   text-align: center;
 }
 
